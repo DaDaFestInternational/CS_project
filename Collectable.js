@@ -21,6 +21,7 @@ class Collectable {
 
     display() {
 
+        strokeWeight(2);
         stroke(palette.dark);
         fill(palette.light);
         ellipse(this.x, this.y, this.radius);

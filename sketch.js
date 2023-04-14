@@ -2,7 +2,7 @@ let palette = {
     white: "#EEE5E9",
     light: "#92DCE5",
     mid: "#D64933",
-    dark: "#7C7C7C",
+    dark: "#5F6A89",
     black: "#2B303A",
   }
 
