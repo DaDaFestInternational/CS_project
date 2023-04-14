@@ -47,8 +47,6 @@ function draw() {
 
     buttonsPressed();
 
-    displayUI();
-
     player.update();
     player.display();
 
@@ -63,6 +61,8 @@ function draw() {
     }
 
     collectable.display();
+
+    displayUI();
 }
 
 function buttonsPressed() {
@@ -89,7 +89,7 @@ function buttonsPressed() {
 function displayUI() {
 
     push();
-    translate(width/2, 80);
+    translate(width/2, 100);
 
     fill(palette.black)
     textAlign(CENTER, CENTER);
