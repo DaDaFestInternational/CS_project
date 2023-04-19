@@ -41,7 +41,10 @@ let wallCount = 1200;
 
 function setup() {
 
-    createCanvas(windowWidth, windowHeight);
+    let maxWidth = windowWidth > 1280 ? 1280 : windowWidth;
+    let maxHeight = windowHeight > 703 ? 703 : windowHeight;
+
+    createCanvas(maxWidth, maxHeight);
     noStroke();
     angleMode(DEGREES);
 
