@@ -35,6 +35,8 @@ let down = 83;
 let left = 65;
 let right = 68;
 
+let newKey = 0;
+
 let scoreCount = 0;
 
 let wallCount = 1200;
@@ -84,17 +86,25 @@ function buttonsPressed() {
 
     let strength = 0.27;
 
-    if (keyIsDown(left)) {
+    if (keyIsDown(left) && keyIsDown(right)) {
+        xAxisInput = 0;
+    } else if (keyIsDown(left)) {
+        if (newKey == left) newKey = 0;
         xAxisInput = -strength;
     } else if (keyIsDown(right)) {
+        if (newKey == right) newKey = 0;
         xAxisInput = strength;
     } else {
         xAxisInput = 0;
     }
 
-    if (keyIsDown(up)) {
+    if (keyIsDown(up) && keyIsDown(down)) {
+        yAxisInput = 0;
+    } else if (keyIsDown(up)) {
+        if (newKey == up) newKey = 0;
         yAxisInput = -strength;
     } else if (keyIsDown(down)) {
+        if (newKey == down) newKey = 0;
         yAxisInput = strength;
     } else {
         yAxisInput = 0;
@@ -113,15 +123,15 @@ function displayUI() {
     text("score = " + scoreCount, 0, 40);
 
     translate(0, 120);
-    textSize(30);
-    text(char(up), 0, -30);
-    text(char(down), 0, 30);
-    text(char(left), -30, 0);
-    text(char(right), 30, 0);
+
+    drawKey(up, 0, -30);
+    drawKey(down, 0, 30);
+    drawKey(left, -30, 0);
+    drawKey(right, 30, 0);
 
     angleMode(DEGREES);
     rotate(45);
-
+    fill(palette.mid);
     rectMode(CENTER);
     rect(0, 0, 15);
 
@@ -166,15 +176,19 @@ function pathInput() {
     if (direction == 0) {
         leftCoord = newCoord;
         left = newKeycode;
+        newKey = left;
     } else if (direction == 1) {
         rightCoord = newCoord;
         right = newKeycode;
+        newKey = right;
     } else if (direction == 2) {
         upCoord = newCoord;
         up = newKeycode;
+        newKey = up;
     } else if (direction == 3) {
         downCoord = newCoord;
         down = newKeycode;
+        newKey = down;
     }
 
     return true;
@@ -204,4 +218,19 @@ function keyPressed() {
     if (keyCode == ESCAPE) {
         player.reset();
     }
+}
+
+function drawKey(letter, x, y) {
+
+    if (newKey == letter) {
+        fill(palette.mid);
+        ellipse(x, y, 30);
+        fill(palette.black);
+    } else {
+        fill(palette.mid);
+    }
+
+    textSize(25);
+    if (keyIsDown(letter)) textSize(30);
+    text(char(letter), x, y);
 }
