@@ -1,8 +1,10 @@
+// https://coolors.co/eee5e9-92dce5-20b650-0d3ab4-2b303a
+
 let palette = {
     white: "#EEE5E9",
     light: "#92DCE5",
-    mid: "#D64933",
-    dark: "#5F6A89",
+    mid: "#20B650",
+    dark: "#0D3AB4",
     black: "#2B303A",
   }
 
@@ -17,6 +19,8 @@ let yAxisInput = 0;
 
 let player;
 let collectable;
+let walls = [];
+let pathMaker;
 
 let minKeycode = 65;
 let maxKeycode = 90;
@@ -33,11 +37,21 @@ let right = 68;
 
 let scoreCount = 0;
 
+let wallCount = 1200;
+
 function setup() {
+
     createCanvas(windowWidth, windowHeight);
     noStroke();
+    angleMode(DEGREES);
 
     player = new Player();
+
+    for (let i = 0; i < wallCount; i++) {
+        walls.push(new Wall());
+    }
+
+    pathMaker = new PathMaker();
     collectable = new Collectable();
 }
 
@@ -50,14 +64,17 @@ function draw() {
     player.update();
     player.display();
 
-    if (collectable.collide()) {
-        collectable = new Collectable();
+    if (collectable.collide(player)) {
+       newMaze();
         if(scoreCount % 3 == 2) {
-            //randomInput();
             let foundPath = pathInput();
             while(!foundPath) foundPath = pathInput();
         }
         scoreCount++;
+    }
+
+    for (let i = 0; i < walls.length; i++) {
+        walls[i].display();
     }
 
     collectable.display();
@@ -91,7 +108,7 @@ function displayUI() {
     push();
     translate(width/2, 100);
 
-    fill(palette.black)
+    fill(palette.mid)
     textAlign(CENTER, CENTER);
     textSize(30);
     text(char(up), 0, -30);
@@ -106,26 +123,6 @@ function displayUI() {
     rect(0, 0, 15);
 
     pop();
-}
-
-function randomInput() {
-
-    let direction = int(random(4));
-    let newKeycode = int(random(minKeycode, maxKeycode+1));
-
-    while (newKeycode == up || newKeycode == down || newKeycode == left || newKeycode == right) {
-        newKeycode = int(random(minKeycode, maxKeycode+1));
-    }
-
-    if (direction == 0) {
-        up = newKeycode;
-    } else if (direction == 1) {
-        down = newKeycode;
-    } else if (direction == 2) {
-        left = newKeycode;
-    } else if (direction == 3) {
-        right = newKeycode;
-    }
 }
 
 function pathInput() {
@@ -178,4 +175,19 @@ function pathInput() {
     }
 
     return true;
+}
+
+function newMaze() {
+
+    walls = [];
+
+    for (let i = 0; i < wallCount; i++) {
+        walls.push(new Wall());
+    }
+
+    pathMaker = new PathMaker();
+    collectable = new Collectable();
+
+    player.velocityX = 0;
+    player.velocityY = 0;
 }
