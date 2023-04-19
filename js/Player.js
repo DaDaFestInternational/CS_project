@@ -55,6 +55,14 @@ class Player {
         this.velocityY *= 0.95;
     }
 
+    reset() {
+
+        this.velocityX = 0;
+        this.velocityY = 0;
+        this.x = pathMaker.startX;
+        this.y = pathMaker.startY;
+    }
+
     display() {
 
         fill(palette.dark);

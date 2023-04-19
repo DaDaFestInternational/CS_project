@@ -106,10 +106,15 @@ function buttonsPressed() {
 function displayUI() {
 
     push();
-    translate(width/2, 100);
+    translate(width/2, 0);
 
     fill(palette.mid)
     textAlign(CENTER, CENTER);
+
+    textSize(20);
+    text("score = " + scoreCount, 0, 40);
+
+    translate(0, 120);
     textSize(30);
     text(char(up), 0, -30);
     text(char(down), 0, 30);
@@ -190,4 +195,11 @@ function newMaze() {
 
     player.velocityX = 0;
     player.velocityY = 0;
+}
+
+function keyPressed() {
+
+    if (keyCode == ESCAPE) {
+        player.reset();
+    }
 }
