@@ -47,12 +47,7 @@ function setup() {
 
     player = new Player();
 
-    for (let i = 0; i < wallCount; i++) {
-        walls.push(new Wall());
-    }
-
-    pathMaker = new PathMaker();
-    collectable = new Collectable();
+    newMaze();
 }
 
 function draw() {
@@ -195,6 +190,10 @@ function newMaze() {
 
     player.velocityX = 0;
     player.velocityY = 0;
+
+    if (dist(player.x, player.y, collectable.x, collectable.y) < 300) {
+        newMaze();
+    }
 }
 
 function keyPressed() {
