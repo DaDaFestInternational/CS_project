@@ -60,8 +60,10 @@ class Wall {
             wallCanvas.noStroke();
         }
 
+        let badLeeway = this.bad ? 2 : 0;
+
         wallCanvas.fill(palette.black);
-        wallCanvas.ellipse(this.x, this.y, this.radius);
+        wallCanvas.ellipse(this.x, this.y, this.radius + badLeeway);
     }
 
     kill() {

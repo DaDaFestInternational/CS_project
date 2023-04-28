@@ -1,4 +1,4 @@
-// https://coolors.co/eee5e9-92dce5-20b650-0d3ab4-2b303a-ff7954
+// https://coolors.co/eee5e9-6BCEDB-20b650-0d3ab4-2b303a-ff7954
 
 let palette = {
     white: "#EEE5E9",
