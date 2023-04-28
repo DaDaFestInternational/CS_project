@@ -1,8 +1,8 @@
 class Wall {
 
-    constructor() {
+    constructor(size) {
 
-        this.radius = random(50, 100);
+        this.radius = random(size-25, size+25);
         this.x = random(-this.radius, width+this.radius);
         this.y = random(-this.radius, height+this.radius);
 
@@ -36,8 +36,8 @@ class Wall {
 
         if (this.dead) return;
 
-        fill(palette.black);
-        ellipse(this.x, this.y, this.radius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction);
+        wallCanvas.fill(palette.black);
+        wallCanvas.ellipse(this.x, this.y, this.radius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction);
     }
 
     kill() {

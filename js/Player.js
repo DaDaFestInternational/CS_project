@@ -65,8 +65,8 @@ class Player {
 
     display() {
 
-        fill(palette.dark);
-        ellipse(this.x, this.y, this.radius);
+        ballCanvas.fill(palette.dark);
+        ballCanvas.ellipse(this.x, this.y, this.radius);
     }
 }
 

@@ -39,7 +39,10 @@ let newKey = 0;
 
 let scoreCount = 0;
 
-let wallCount = 2200;
+let wallCount = 2000;
+
+let wallCanvas;
+let ballCanvas;
 
 function setup() {
 
@@ -50,6 +53,12 @@ function setup() {
     noStroke();
     angleMode(DEGREES);
 
+    wallCanvas = createGraphics(maxWidth, maxHeight);
+    wallCanvas.noStroke();
+
+    ballCanvas = createGraphics(maxWidth, maxHeight);
+    ballCanvas.noStroke();
+
     player = new Player();
 
     newMaze();
@@ -58,6 +67,8 @@ function setup() {
 function draw() {
 
     background(color(238, 229, 233, 10));
+    wallCanvas.clear();
+    ballCanvas.background(color(238, 229, 233, 10));
 
     buttonsPressed();
 
@@ -79,6 +90,9 @@ function draw() {
     for (let i = 0; i < walls.length; i++) {
         walls[i].display();
     }
+
+    image(ballCanvas, 0, 0);
+    image(wallCanvas, 0, 0);
 
     displayUI();
 }
@@ -199,8 +213,12 @@ function newMaze() {
 
     walls = [];
 
+    for (let i = 0; i < 100; i++) {
+        walls.push(new Wall(1000));
+    }
+
     for (let i = 0; i < wallCount; i++) {
-        walls.push(new Wall());
+        walls.push(new Wall(75));
     }
 
     pathMaker = new PathMaker();
@@ -214,6 +232,8 @@ function newMaze() {
     }
 
     background(color(238, 229, 233, 255));
+    wallCanvas.clear();
+    ballCanvas.clear();
 }
 
 function keyPressed() {

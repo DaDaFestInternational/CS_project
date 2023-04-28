@@ -52,10 +52,10 @@ class Collectable {
 
     display() {
 
-        strokeWeight(2);
-        stroke(palette.dark);
-        fill(palette.light);
-        ellipse(this.currentX, this.currentY, this.radius);
-        noStroke();
+        ballCanvas.strokeWeight(2);
+        ballCanvas.stroke(palette.dark);
+        ballCanvas.fill(palette.light);
+        ballCanvas.ellipse(this.currentX, this.currentY, this.radius);
+        ballCanvas.noStroke();
     }
 }
