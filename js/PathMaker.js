@@ -6,7 +6,7 @@ class PathMaker {
         this.y = player.y;
         this.startX = this.x;
         this.startY = this.y;
-        this.radius = player.radius * 1.5;
+        this.radius = player.radius * 2;
 
         this.velocityX = random(-this.radius, this.radius);
         this.velocityY = random(-this.radius, this.radius);

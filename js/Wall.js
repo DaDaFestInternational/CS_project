@@ -2,7 +2,8 @@ class Wall {
 
     constructor(size) {
 
-        this.radius = random(size-25, size+25);
+        this.startRadius = random(size-25, size+25);
+        this.radius = this.startRadius;
         this.x = random(-this.radius, width+this.radius);
         this.y = random(-this.radius, height+this.radius);
 
@@ -12,6 +13,13 @@ class Wall {
         }
 
         this.dead = false;
+        this.bad = false;
+
+        let score = scoreCount-9 > 30 ? 30 : scoreCount-9;
+
+        if (size < 500 && random() < 0.02 * score) {
+            this.bad = true;
+        }
 
         this.frameCountOffset = int(random(100));
         this.amplitude = random(5, 10);
@@ -21,6 +29,7 @@ class Wall {
 
     update() {
 
+        this.radius = this.startRadius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction;
     }
 
     collide(collider) {
@@ -32,12 +41,22 @@ class Wall {
         }
     }
 
-    display() {
+    display(turn) {
 
         if (this.dead) return;
 
+        if (turn == 0 && !this.bad) return;
+        if (turn == 1 && this.bad) return;
+
+        if (this.bad) {
+            wallCanvas.stroke(palette.bad);
+            wallCanvas.strokeWeight(5);
+        } else {
+            wallCanvas.noStroke();
+        }
+
         wallCanvas.fill(palette.black);
-        wallCanvas.ellipse(this.x, this.y, this.radius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction);
+        wallCanvas.ellipse(this.x, this.y, this.radius);
     }
 
     kill() {

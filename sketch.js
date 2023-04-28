@@ -1,4 +1,4 @@
-// https://coolors.co/eee5e9-92dce5-20b650-0d3ab4-2b303a
+// https://coolors.co/eee5e9-92dce5-20b650-0d3ab4-2b303a-ff7954
 
 let palette = {
     white: "#EEE5E9",
@@ -6,6 +6,7 @@ let palette = {
     mid: "#20B650",
     dark: "#0D3AB4",
     black: "#2B303A",
+    bad: "#FF6554"
   }
 
 let keeb = [
@@ -92,7 +93,12 @@ function draw() {
 
 
     for (let i = 0; i < walls.length; i++) {
-        walls[i].display();
+        walls[i].update();
+        walls[i].display(0);
+    }
+
+    for (let i = 0; i < walls.length; i++) {
+        walls[i].display(1);
     }
 
     image(ballCanvas, 0, 0);
@@ -218,12 +224,12 @@ function newMaze() {
     walls = [];
     collectables = [];
 
-    for (let i = 0; i < 100; i++) {
-        walls.push(new Wall(1000));
-    }
-
     for (let i = 0; i < wallCount; i++) {
         walls.push(new Wall(75));
+    }
+
+    for (let i = 0; i < 100; i++) {
+        walls.push(new Wall(1000));
     }
 
     pathMaker = new PathMaker();

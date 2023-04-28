@@ -35,6 +35,11 @@ class Player {
         for (let i = 0; i < walls.length; i++) {
             if (walls[i].collide(potentialPlayer)) {
 
+                if (walls[i].bad) {
+                    player.reset();
+                    return;
+                }
+
                 let incidenceAngle = createVector(this.velocityX, this.velocityY).heading();
                 let surfaceAngle = createVector(potentialPlayer.x - walls[i].x, potentialPlayer.y - walls[i].y).heading() + 90;
                 let newAngle = angleReflect(incidenceAngle, surfaceAngle);
