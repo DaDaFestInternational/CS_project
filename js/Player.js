@@ -7,6 +7,10 @@ class Player {
         this.velocityX = 0;
         this.velocityY = 0;
         this.radius = 30;
+
+        this.collisionDuration = 0;
+        this.safeX = this.x;
+        this.safeY = this.y;
     }
 
     update() {
@@ -26,6 +30,8 @@ class Player {
             radius: this.radius
         };
 
+        let collided = false;
+
         for (let i = 0; i < walls.length; i++) {
             if (walls[i].collide(potentialPlayer)) {
 
@@ -39,9 +45,25 @@ class Player {
                 this.velocityX = v.x;
                 this.velocityY = v.y;
 
+                collided = true;
+
                 break;
             }
         }
+
+        if (collided) {
+            this.collisionDuration++;
+
+            if (this.collisionDuration > 10) {
+                this.x = this.safeX;
+                this.y = this.safeY;
+            }
+        } else {
+            this.collisionDuration = 0;
+            this.safeX = this.x;
+            this.safeY = this.y;
+        }
+
 
         if (moveX) {
             this.x += this.velocityX;

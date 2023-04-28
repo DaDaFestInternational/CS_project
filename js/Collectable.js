@@ -2,7 +2,7 @@ class Collectable {
 
     constructor() {
 
-        this.radius = 20;
+        this.radius = 15;
         // this.x = random(100, width-100);
         // this.y = random(100, height-100);
 
@@ -16,8 +16,9 @@ class Collectable {
 
         this.currentX = this.x;
         this.currentY = this.y;
-        this.targetX = this.x + random(-30, 30);
-        this.targetY = this.y + random(-30, 30);
+
+        this.targetX = this.x + random(-20, 20);
+        this.targetY = this.y + random(-20, 20);
     }
 
     collide(collider) {
@@ -39,7 +40,7 @@ class Collectable {
 
     update() {
 
-        let radius = 30;
+        let radius = 20;
 
         if (frameCount % 100 == 1) {
             this.targetX = this.x + random(-radius, radius);
