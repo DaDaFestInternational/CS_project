@@ -18,7 +18,7 @@ let xAxisInput = 0;
 let yAxisInput = 0;
 
 let player;
-let collectable;
+let collectables = [];
 let walls = [];
 let pathMaker;
 
@@ -75,17 +75,21 @@ function draw() {
     player.update();
     player.display();
 
-    if (collectable.collide(player)) {
-       newMaze();
-        if(scoreCount % 3 == 2) {
-            let foundPath = pathInput();
-            while(!foundPath) foundPath = pathInput();
+    for (let i = 0; i < collectables.length; i++) {
+
+        if (collectables[i].collide(player)) {
+           newMaze();
+            if(scoreCount % 3 == 2) {
+                let foundPath = pathInput();
+                while(!foundPath) foundPath = pathInput();
+            }
+            scoreCount++;
         }
-        scoreCount++;
+
+        collectables[i].update();
+        collectables[i].display();
     }
 
-    collectable.update();
-    collectable.display();
 
     for (let i = 0; i < walls.length; i++) {
         walls[i].display();
@@ -212,6 +216,7 @@ function pathInput() {
 function newMaze() {
 
     walls = [];
+    collectables = [];
 
     for (let i = 0; i < 100; i++) {
         walls.push(new Wall(1000));
@@ -222,13 +227,18 @@ function newMaze() {
     }
 
     pathMaker = new PathMaker();
-    collectable = new Collectable();
+
+    for (let i = 0; i < 1; i++) {
+        collectables.push(new Collectable());
+    }
 
     player.velocityX = 0;
     player.velocityY = 0;
 
-    if (dist(player.x, player.y, collectable.x, collectable.y) < 300) {
-        newMaze();
+    for (let i = 0; i < collectables.length; i++) {
+        if (dist(player.x, player.y, collectables[i].x, collectables[i].y) < 300) {
+            newMaze();
+        }
     }
 
     background(color(238, 229, 233, 255));
