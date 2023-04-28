@@ -47,6 +47,9 @@ class Player {
 
                 collided = true;
 
+                this.velocityX *= 0.95;
+                this.velocityY *= 0.95;
+
                 break;
             }
         }
