@@ -18,8 +18,8 @@ class Player {
         let moveX = true;
         let moveY = true;
 
-        this.velocityX += xAxisInput*2;
-        this.velocityY += yAxisInput*2;
+        this.velocityX += xAxisInput*1.5;
+        this.velocityY += yAxisInput*1.5;
 
         if (this.x+this.velocityX < this.radius/2 || this.x+this.velocityX > width-this.radius/2) moveX = false;
         if (this.y+this.velocityY < this.radius/2 || this.y+this.velocityY > height-this.radius/2) moveY = false;
