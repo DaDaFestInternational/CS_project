@@ -2,7 +2,7 @@
 
 let palette = {
     white: "#EEE5E9",
-    light: "#92DCE5",
+    light: "#6BCEDB",
     mid: "#20B650",
     dark: "#0D3AB4",
     black: "#2B303A",
@@ -22,6 +22,8 @@ let player;
 let collectables = [];
 let walls = [];
 let pathMaker;
+let door;
+let key;
 
 let minKeycode = 65;
 let maxKeycode = 90;
@@ -73,24 +75,42 @@ function draw() {
 
     buttonsPressed();
 
+    door.update();
+    door.display();
+
+    key.update();
+    key.display();
+
     player.update();
     player.display();
 
-    for (let i = 0; i < collectables.length; i++) {
-
-        if (collectables[i].collide(player)) {
-           newMaze();
-            if(scoreCount % 3 == 2) {
-                let foundPath = pathInput();
-                while(!foundPath) foundPath = pathInput();
-            }
-            scoreCount++;
-        }
-
-        collectables[i].update();
-        collectables[i].display();
+    if (!player.hasKey && key.collide(player)) {
+        player.hasKey = true;
     }
 
+    if (player.hasKey && door.collide(player)) {
+        newMaze();
+        if(scoreCount % 3 == 2) {
+            let foundPath = pathInput();
+            while(!foundPath) foundPath = pathInput();
+        }
+        scoreCount++;
+    }
+
+    // for (let i = 0; i < collectables.length; i++) {
+
+    //     if (collectables[i].collide(player)) {
+    //        newMaze();
+    //         if(scoreCount % 3 == 2) {
+    //             let foundPath = pathInput();
+    //             while(!foundPath) foundPath = pathInput();
+    //         }
+    //         scoreCount++;
+    //     }
+
+    //     collectables[i].update();
+    //     collectables[i].display();
+    // }
 
     for (let i = 0; i < walls.length; i++) {
         walls[i].update();
@@ -234,17 +254,20 @@ function newMaze() {
 
     pathMaker = new PathMaker();
 
-    for (let i = 0; i < 1; i++) {
-        collectables.push(new Collectable());
-    }
+    // for (let i = 0; i < 1; i++) {
+    //     collectables.push(new Collectable());
+    // }
 
     player.velocityX = 0;
     player.velocityY = 0;
+    player.hasKey = false;
 
-    for (let i = 0; i < collectables.length; i++) {
-        if (dist(player.x, player.y, collectables[i].x, collectables[i].y) < 300) {
-            newMaze();
-        }
+    if (dist(player.x, player.y, key.x, key.y) < 200) {
+        newMaze();
+    }
+
+    if (dist(door.x, door.y, key.x, key.y) < 200) {
+        newMaze();
     }
 
     background(color(238, 229, 233, 255));

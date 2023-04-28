@@ -6,7 +6,7 @@ class PathMaker {
         this.y = player.y;
         this.startX = this.x;
         this.startY = this.y;
-        this.radius = player.radius * 2;
+        this.radius = player.radius * 2.5;
 
         this.velocityX = random(-this.radius, this.radius);
         this.velocityY = random(-this.radius, this.radius);
@@ -19,7 +19,12 @@ class PathMaker {
 
         for (let i = 0; i < 40; i++) {
             this.makePath();
+
+            if (i == 10) {
+                door = new Door(this.x, this.y);
+            }
         }
+        key = new Key(this.x, this.y);
     }
 
     makePath() {

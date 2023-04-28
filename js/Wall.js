@@ -49,7 +49,12 @@ class Wall {
         if (turn == 1 && this.bad) return;
 
         if (this.bad) {
-            wallCanvas.stroke(palette.bad);
+
+            if (player.hasKey) {
+                wallCanvas.stroke(palette.dark);
+            } else {
+                wallCanvas.stroke(palette.bad);
+            }
             wallCanvas.strokeWeight(5);
         } else {
             wallCanvas.noStroke();

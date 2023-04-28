@@ -1,4 +1,4 @@
-class Collectable {
+class Key {
 
     constructor(x, y) {
 
@@ -33,6 +33,8 @@ class Collectable {
 
     update() {
 
+        if (player.hasKey) return;
+
         let radius = 20;
 
         if (frameCount % 100 == 1) {
@@ -45,6 +47,8 @@ class Collectable {
     }
 
     display() {
+
+        if (player.hasKey) return;
 
         ballCanvas.strokeWeight(2);
         ballCanvas.stroke(palette.dark);

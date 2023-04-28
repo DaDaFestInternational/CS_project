@@ -11,6 +11,8 @@ class Player {
         this.collisionDuration = 0;
         this.safeX = this.x;
         this.safeY = this.y;
+
+        this.hasKey = false;
     }
 
     update() {
@@ -35,7 +37,7 @@ class Player {
         for (let i = 0; i < walls.length; i++) {
             if (walls[i].collide(potentialPlayer)) {
 
-                if (walls[i].bad) {
+                if (walls[i].bad && !this.hasKey) {
                     player.reset();
                     return;
                 }
