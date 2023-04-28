@@ -39,7 +39,7 @@ let newKey = 0;
 
 let scoreCount = 0;
 
-let wallCount = 1200;
+let wallCount = 2200;
 
 function setup() {
 
@@ -57,7 +57,7 @@ function setup() {
 
 function draw() {
 
-    background(palette.white);
+    background(color(238, 229, 233, 10));
 
     buttonsPressed();
 
@@ -73,11 +73,12 @@ function draw() {
         scoreCount++;
     }
 
+    collectable.update();
+    collectable.display();
+
     for (let i = 0; i < walls.length; i++) {
         walls[i].display();
     }
-
-    collectable.display();
 
     displayUI();
 }
@@ -211,6 +212,8 @@ function newMaze() {
     if (dist(player.x, player.y, collectable.x, collectable.y) < 300) {
         newMaze();
     }
+
+    background(color(238, 229, 233, 255));
 }
 
 function keyPressed() {

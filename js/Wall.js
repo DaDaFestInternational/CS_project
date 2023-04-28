@@ -2,7 +2,7 @@ class Wall {
 
     constructor() {
 
-        this.radius = random(50, 200);
+        this.radius = random(50, 100);
         this.x = random(-this.radius, width+this.radius);
         this.y = random(-this.radius, height+this.radius);
 
@@ -12,6 +12,11 @@ class Wall {
         }
 
         this.dead = false;
+
+        this.frameCountOffset = int(random(100));
+        this.amplitude = random(5, 10);
+        this.direction = random([-1, 1]);
+        this.speed = random(0.3, 0.8);
     }
 
     update() {
@@ -32,7 +37,7 @@ class Wall {
         if (this.dead) return;
 
         fill(palette.black);
-        ellipse(this.x, this.y, this.radius);
+        ellipse(this.x, this.y, this.radius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction);
     }
 
     kill() {

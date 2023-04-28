@@ -13,11 +13,16 @@ class Collectable {
 
         this.x = pathMaker.x;
         this.y = pathMaker.y;
+
+        this.currentX = this.x;
+        this.currentY = this.y;
+        this.targetX = this.x + random(-30, 30);
+        this.targetY = this.y + random(-30, 30);
     }
 
     collide(collider) {
 
-        if (dist(collider.x, collider.y, this.x, this.y) < (this.radius+collider.radius)/2) {
+        if (dist(collider.x, collider.y, this.currentX, this.currentY) < (this.radius+collider.radius)/2) {
             return true;
         }
     }
@@ -32,12 +37,25 @@ class Collectable {
         return false;
     }
 
+    update() {
+
+        let radius = 30;
+
+        if (frameCount % 100 == 1) {
+            this.targetX = this.x + random(-radius, radius);
+            this.targetY = this.y + random(-radius, radius);
+        }
+
+        this.currentX = lerp(this.currentX, this.targetX, 0.01);
+        this.currentY = lerp(this.currentY, this.targetY, 0.01);
+    }
+
     display() {
 
         strokeWeight(2);
         stroke(palette.dark);
         fill(palette.light);
-        ellipse(this.x, this.y, this.radius);
+        ellipse(this.currentX, this.currentY, this.radius);
         noStroke();
     }
 }

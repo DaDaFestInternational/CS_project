@@ -6,7 +6,7 @@ class Player {
         this.y = height/2;
         this.velocityX = 0;
         this.velocityY = 0;
-        this.radius = 50;
+        this.radius = 30;
     }
 
     update() {

@@ -24,7 +24,7 @@ class PathMaker {
 
     makePath() {
 
-        if (random() < 0.1) {
+        if (random() < 0.3) {
             this.velocityX = random(-this.radius, this.radius);
             this.velocityY = random(-this.radius, this.radius);
         }
