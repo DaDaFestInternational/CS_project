@@ -44,7 +44,7 @@ let right = 68;
 
 let newKey = 0;
 
-let scoreCount = 0;
+let dayCount = 0;
 
 let wallCanvas;
 let ballCanvas;
@@ -60,6 +60,8 @@ let blackKeyImagekeyImage;
 let blackKeyImage;
 
 let risingWater;
+
+let giveUpButton;
 
 function preload() {
 
@@ -91,6 +93,8 @@ function setup() {
 
     player = new Player();
 
+    giveUpButton = new Button("Give up", width-180, 70);
+
     newMaze(true);
 }
 
@@ -100,6 +104,7 @@ function draw() {
     ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
+    giveUpButton.update();
 
     if (risingWater != 0) {
         risingWater.update();
@@ -127,11 +132,11 @@ function draw() {
 
     if (player.hasKey && door.enter(player)) {
         newMaze(false, door);
-        if(scoreCount % 3 == 2) {
+        if(dayCount % 3 == 2) {
             let foundPath = pathInput();
             while(!foundPath) foundPath = pathInput();
         }
-        scoreCount++;
+        dayCount++;
 
         if (cumulative1 < cumulative2) {
             cumulative1+=3;
@@ -213,14 +218,14 @@ function displayUI() {
     textFont(brushFont);
 
     textSize(25);
-    text(days[scoreCount%days.length], width - 50, 35);
+    text(days[dayCount%days.length], width - 50, 35);
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
 
     fill(palette.white);
     textSize(40);
-    text(scoreCount+1, width - 50, 73);
+    text(dayCount+1, width - 50, 73);
 
     translate(width/2, 85);
 
@@ -243,6 +248,8 @@ function displayUI() {
     rect(0, 0, 15);
 
     pop();
+
+    giveUpButton.display();
 }
 
 function pathInput() {
@@ -312,8 +319,6 @@ function newMaze(fresh, myDoor) {
     collectables = [];
     toxicWater = [];
 
-    // if (scoreCount > 15) risingWater = new RisingWater();
-    // else risingWater = 0;
     risingWater = new RisingWater();
 
     let offset = 27;
@@ -328,15 +333,15 @@ function newMaze(fresh, myDoor) {
         }
     }
 
-    for (let i = 0; i < scoreCount/2; i++) {
+    for (let i = 0; i < dayCount/2; i++) {
         toxicWater.push(new ToxicWater());
     }
 
-    pathMaker = new PathMaker();
+    giveUpButton.lifeTime = 0;
+    player.bounceCount = 0;
+    player.lavaDeathCount = 0;
 
-    // for (let i = 0; i < 1; i++) {
-    //     collectables.push(new Collectable());
-    // }
+    pathMaker = new PathMaker();
 
     player.velocityX = 0;
     player.velocityY = 0;

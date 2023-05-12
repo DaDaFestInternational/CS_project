@@ -23,6 +23,9 @@ class Player {
         this.hasKey = false;
 
         this.inWater = false;
+
+        this.bounceCount = 0;
+        this.lavaDeathCount = 0;
     }
 
     update() {
@@ -74,6 +77,7 @@ class Player {
 
                 if (walls[i].lava && !this.hasKey) {
                     player.reset();
+                    this.lavaDeathCount++;
                     return;
                 }
 
@@ -98,6 +102,7 @@ class Player {
 
         if (collided) {
             this.collisionDuration++;
+            this.bounceCount++;
 
             if (this.collisionDuration > 10) {
                 this.x = this.safeX;

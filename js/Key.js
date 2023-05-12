@@ -2,7 +2,7 @@ class Key {
 
     constructor(x, y) {
 
-        this.radius = 15;
+        this.radius = 30;
 
         this.x = x;
         this.y = y;
@@ -55,8 +55,7 @@ class Key {
         } else if (player.hasKey) {
             this.lastFrame = true;
             ballCanvas.imageMode(CENTER);
-            ballCanvas.image(blackKeyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
-            console.log('done')
+            ballCanvas.image(blackKeyImage, this.currentX, this.currentY, this.radius, this.radius);
             return;
         }
 
@@ -73,9 +72,9 @@ class Key {
         // objectCanvas.noStroke();
 
         ballCanvas.imageMode(CENTER);
-        ballCanvas.image(keyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
+        ballCanvas.image(keyImage, this.currentX, this.currentY, this.radius, this.radius);
 
         objectCanvas.imageMode(CENTER);
-        objectCanvas.image(keyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
+        objectCanvas.image(keyImage, this.currentX, this.currentY, this.radius, this.radius);
     }
 }

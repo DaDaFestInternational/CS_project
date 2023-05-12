@@ -21,7 +21,7 @@ class Wall {
         this.dead = false;
         this.lava = false;
 
-        let score = scoreCount-9 > 30 ? 30 : scoreCount-9;
+        let score = dayCount-9 > 30 ? 30 : dayCount-9;
 
         if (size < 500 && random() < 0.02 * score) {
             this.lava = true;

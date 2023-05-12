@@ -6,7 +6,10 @@ class PathMaker {
         this.y = player.y;
         this.startX = this.x;
         this.startY = this.y;
-        this.radius = player.radius * 2.5;
+        this.radiusMultiplier = 2.5;
+        this.radiusMultiplier -= dayCount/5;
+        if (this.radiusMultiplier < 0) this.radiusMultiplier = 1;
+        this.radius = player.radius * random(this.radiusMultiplier, 2.5);
 
         this.velocityX = random(-this.radius, this.radius);
         this.velocityY = random(-this.radius, this.radius);
@@ -35,7 +38,7 @@ class PathMaker {
         }
 
         if ((this.x < this.radius*3 && this.velocityX < 0) || (this.x > width-this.radius*3 && this.velocityX > 0)) this.velocityX *= -1;
-        if ((this.y < this.radius*3+50 && this.velocityY < 0) || (this.y > height-this.radius*3 && this.velocityY > 0)) this.velocityY *= -1;
+        if ((this.y < this.radius*3+100 && this.velocityY < 0) || (this.y > height-this.radius*3 && this.velocityY > 0)) this.velocityY *= -1;
 
         this.x += this.velocityX;
         this.y += this.velocityY;
