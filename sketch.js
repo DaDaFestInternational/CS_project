@@ -149,7 +149,10 @@ function draw() {
             cumulative1 = 3;
             cumulative2--;
 
-            if (cumulative2 < 0) cumulative2 = culminations;
+            if (cumulative2 < 0) {
+                cumulative2 = culminations;
+                snow = [];
+            }
         }
     }
 
