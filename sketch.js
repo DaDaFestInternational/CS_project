@@ -28,6 +28,7 @@ let pathMaker;
 let door;
 let key;
 let toxicWater = [];
+let snow = [];
 
 let minKeycode = 65;
 let maxKeycode = 90;
@@ -94,6 +95,10 @@ function setup() {
     player = new Player();
 
     giveUpButton = new Button("Give up", width-180, 70);
+
+    // for (let i = 0; i < 50; i++) {
+    //     snow.push(new Snow());
+    // }
 
     newMaze(true);
 }
@@ -175,6 +180,24 @@ function draw() {
 
     image(objectCanvas, 0, 0);
     image(wallCanvas, 0, 0);
+
+    for (let i = 0; i < snow.length; i++) {
+        snow[i].update();
+        snow[i].display();
+    }
+
+    let radius = 55;
+    fill(palette.black);
+    noStroke();
+    ellipse(0, 0, radius);
+    ellipse(width, 0, radius);
+    ellipse(width, height, radius);
+    ellipse(0, height, radius);
+
+    noFill();
+    stroke(palette.black);
+    strokeWeight(10);
+    rect(width/2, height/2, width, height);
 
     displayUI();
 }
@@ -358,10 +381,12 @@ function newMaze(fresh, myDoor) {
 
     if (dist(player.x, player.y, key.x, key.y) < 200) {
         newMaze(fresh, myDoor);
+        return;
     }
 
     if (dist(door.x, door.y, key.x, key.y) < 200) {
         newMaze(fresh, myDoor);
+        return;
     }
 
     background(color(20, 114, 176, 255));
@@ -372,6 +397,22 @@ function newMaze(fresh, myDoor) {
     updateWalls();
 
     for (let i = 0; i < 100; i++) ballCanvas.background(color(68, 140, 187, 10));
+
+    if (dayCount <= 1) return;
+
+    if (snow.length > 1000 || (random() < 0.3 && snow.length > 0)) {
+        let half = snow.length/2;
+        snow = snow.splice(0, half);
+    } else if (snow.length == 0) {
+        for (let i = 0; i < 50; i++) {
+            snow.push(new Snow());
+        }
+    } else {
+        let currentSnow = snow.length;
+        for (let i = 0; i < currentSnow; i++) {
+            snow.push(new Snow());
+        }
+    }
 }
 
 function keyPressed() {
@@ -406,17 +447,4 @@ function updateWalls() {
     for (let i = 0; i < walls.length; i++) {
         walls[i].display(1);
     }
-
-    let radius = 55;
-    wallCanvas.fill(palette.black);
-    wallCanvas.noStroke();
-    wallCanvas.ellipse(0, 0, radius);
-    wallCanvas.ellipse(width, 0, radius);
-    wallCanvas.ellipse(width, height, radius);
-    wallCanvas.ellipse(0, height, radius);
-
-    wallCanvas.noFill();
-    wallCanvas.stroke(palette.black);
-    wallCanvas.strokeWeight(10);
-    wallCanvas.rect(0, 0, width, height);
 }

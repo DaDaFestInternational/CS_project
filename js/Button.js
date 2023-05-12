@@ -45,6 +45,7 @@ class Button {
         if (player.bounceCount < this.minBounces && player.lavaDeathCount < this.minLavaDeathsBounces && this.lifeTime < this.appearTime) return;
 
         push();
+        strokeWeight(1);
         stroke(palette.mid);
         fill(palette.light);
         if (this.hovered) fill(palette.black);
