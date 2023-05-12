@@ -35,7 +35,8 @@ class Player {
         let doorDilate = sin(frameCount - this.doorDilateFrame) * 10;
         this.doorDilate = doorDilate;
 
-        if (doorDilate > 0) this.stopDoorDilate = true;
+        // if (doorDilate > 0) this.stopDoorDilate = true;
+        this.stopDoorDilate = true;
         if (this.stopDoorDilate && doorDilate < 0) this.doorDilate = 0;
 
         if (this.doorRadius > 0 && this.doorDilate == 0) this.doorRadius -= 2;
