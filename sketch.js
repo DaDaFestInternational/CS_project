@@ -65,8 +65,8 @@ function preload() {
 
 function setup() {
 
-    let maxWidth = windowWidth > 1280 ? 1280 : windowWidth;
-    let maxHeight = windowHeight > 703 ? 703 : windowHeight;
+    let maxWidth = windowWidth > 1280-10 ? 1280-10 : windowWidth;
+    let maxHeight = windowHeight > 703-10 ? 703-10 : windowHeight;
 
     createCanvas(maxWidth, maxHeight);
     noStroke();
