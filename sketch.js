@@ -1,12 +1,12 @@
 // https://coolors.co/eee5e9-6BCEDB-20b650-0d3ab4-2b303a-ff7954
 
 let palette = {
-    white: "#EEE5E9",
-    light: "#6BCEDB",
-    mid: "#20B650",
-    dark: "#0D3AB4",
-    black: "#2B303A",
-    bad: "#FF6554"
+    white: "#FEDCC0",
+    light: "#B2CDC6",
+    mid: "#FD9A7E",
+    dark: "#4379AE",
+    black: "#173045",
+    lava: "#F34B1B"
   }
 
 let keeb = [
@@ -42,10 +42,13 @@ let newKey = 0;
 
 let scoreCount = 0;
 
-let wallCount = 2000;
-
 let wallCanvas;
 let ballCanvas;
+let objectCanvas;
+
+let culminations = 7;
+let cumulative1 = 0;
+let cumulative2 = culminations;
 
 function setup() {
 
@@ -62,16 +65,18 @@ function setup() {
     ballCanvas = createGraphics(maxWidth, maxHeight);
     ballCanvas.noStroke();
 
+    objectCanvas = createGraphics(maxWidth, maxHeight);
+    objectCanvas.noStroke();
+
     player = new Player();
 
-    newMaze();
+    newMaze(true);
 }
 
 function draw() {
 
-    background(color(238, 229, 233, 10));
-    wallCanvas.clear();
-    ballCanvas.background(color(238, 229, 233, 10));
+    objectCanvas.clear();
+    ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
 
@@ -86,42 +91,53 @@ function draw() {
 
     if (!player.hasKey && key.collide(player)) {
         player.hasKey = true;
+        updateWalls();
     }
 
-    if (player.hasKey && door.collide(player)) {
-        newMaze();
+    if (player.hasKey && door.enter(player)) {
+        newMaze(false, door);
         if(scoreCount % 3 == 2) {
             let foundPath = pathInput();
             while(!foundPath) foundPath = pathInput();
         }
         scoreCount++;
-    }
 
-    // for (let i = 0; i < collectables.length; i++) {
+        if (cumulative1 < cumulative2) {
+            cumulative1+=3;
+        } else {
+            cumulative1 = 3;
+            cumulative2--;
 
-    //     if (collectables[i].collide(player)) {
-    //        newMaze();
-    //         if(scoreCount % 3 == 2) {
-    //             let foundPath = pathInput();
-    //             while(!foundPath) foundPath = pathInput();
-    //         }
-    //         scoreCount++;
-    //     }
-
-    //     collectables[i].update();
-    //     collectables[i].display();
-    // }
-
-    for (let i = 0; i < walls.length; i++) {
-        walls[i].update();
-        walls[i].display(0);
-    }
-
-    for (let i = 0; i < walls.length; i++) {
-        walls[i].display(1);
+            if (cumulative2 < 0) cumulative2 = culminations;
+        }
     }
 
     image(ballCanvas, 0, 0);
+
+    strokeWeight(1);
+    stroke(palette.black);
+    noFill();
+    rectMode(CENTER);
+
+    let spacing = player.radius*1.5;
+    let m = tan((culminations-cumulative2)*12)*20+2;
+
+    for (let i = spacing/2-10+spacing*1.25; i < width+height; i += spacing) {
+
+        let x = pathMaker.startX;
+        let y = pathMaker.startY;
+
+        push();
+        translate(x, y);
+        rotate((frameCount/50+i)*m);
+        rect(sin(frameCount)*m, sin(frameCount)*m, i+sin(frameCount)*2-6, i+sin(frameCount)*2-6, spacing-3);
+        rect(sin(frameCount)*m, sin(frameCount)*m, i+sin(frameCount)*2, i+sin(frameCount)*2, spacing);
+        pop();
+        spacing*=1.25;
+    }
+
+
+    image(objectCanvas, 0, 0);
     image(wallCanvas, 0, 0);
 
     displayUI();
@@ -161,8 +177,9 @@ function displayUI() {
     push();
     translate(width/2, 0);
 
-    fill(palette.mid)
+    fill(palette.black)
     textAlign(CENTER, CENTER);
+    noStroke();
 
     textSize(20);
     text("score = " + scoreCount, 0, 40);
@@ -176,7 +193,7 @@ function displayUI() {
 
     angleMode(DEGREES);
     rotate(45);
-    fill(palette.mid);
+    fill(palette.black);
     rectMode(CENTER);
     rect(0, 0, 15);
 
@@ -239,17 +256,26 @@ function pathInput() {
     return true;
 }
 
-function newMaze() {
+function newMaze(fresh, myDoor) {
+
+    if (!fresh) {
+        player.x = myDoor.x;
+        player.y = myDoor.y;
+    }
 
     walls = [];
     collectables = [];
 
-    for (let i = 0; i < wallCount; i++) {
-        walls.push(new Wall(75));
-    }
+    let offset = 27;
 
-    for (let i = 0; i < 100; i++) {
-        walls.push(new Wall(1000));
+    for (let j = 0; j <= height+offset*2; j += offset) {
+        for (let i = 0; i <= width; i += offset) {
+
+            let x = i + random(-offset, offset);
+            let y = j + random(-offset, offset);
+
+            walls.push(new Wall(x, y, 85));
+        }
     }
 
     pathMaker = new PathMaker();
@@ -260,19 +286,31 @@ function newMaze() {
 
     player.velocityX = 0;
     player.velocityY = 0;
+    player.visualRadius = 0;
+    if (!fresh) {
+        player.doorRadius = myDoor.radius;
+        player.doorDilateFrame = myDoor.dilateFrame;
+        player.stopDoorDilate = false;
+        player.doorHasBeenBig = false;
+        player.doorDilate = -1000;
+        player.doorTime = 0;
+    }
     player.hasKey = false;
 
     if (dist(player.x, player.y, key.x, key.y) < 200) {
-        newMaze();
+        newMaze(fresh, myDoor);
     }
 
     if (dist(door.x, door.y, key.x, key.y) < 200) {
-        newMaze();
+        newMaze(fresh, myDoor);
     }
 
-    background(color(238, 229, 233, 255));
+    background(color(20, 114, 176, 255));
+
     wallCanvas.clear();
     ballCanvas.clear();
+
+    updateWalls();
 }
 
 function keyPressed() {
@@ -285,14 +323,26 @@ function keyPressed() {
 function drawKey(letter, x, y) {
 
     if (newKey == letter) {
-        fill(palette.mid);
-        ellipse(x, y, 30);
         fill(palette.black);
+        ellipse(x, y, 30);
+        fill(palette.white);
     } else {
-        fill(palette.mid);
+        fill(palette.black);
     }
 
     textSize(25);
     if (keyIsDown(letter)) textSize(30);
     text(char(letter), x, y);
+}
+
+function updateWalls() {
+
+    for (let i = 0; i < walls.length; i++) {
+        walls[i].update();
+        walls[i].display(0);
+    }
+
+    for (let i = 0; i < walls.length; i++) {
+        walls[i].display(1);
+    }
 }

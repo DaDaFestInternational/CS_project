@@ -1,24 +1,30 @@
 class Wall {
 
-    constructor(size) {
+    constructor(x, y, size) {
 
         this.startRadius = random(size-25, size+25);
+        this.startRadius = int(this.startRadius/10)*10 + 3;
         this.radius = this.startRadius;
-        this.x = random(-this.radius, width+this.radius);
-        this.y = random(-this.radius, height+this.radius);
+        this.x = x;
+        this.y = y;
+
+        // this.x = random(-this.radius, width+this.radius);
+        // this.y = random(-this.radius, height+this.radius);
 
         while (this.collide(player)) {
             this.x = random(width);
             this.y = random(height);
         }
 
+        this.strokeWeight = random(1, 3);
+
         this.dead = false;
-        this.bad = false;
+        this.lava = false;
 
         let score = scoreCount-9 > 30 ? 30 : scoreCount-9;
 
         if (size < 500 && random() < 0.02 * score) {
-            this.bad = true;
+            this.lava = true;
         }
 
         this.frameCountOffset = int(random(100));
@@ -29,7 +35,7 @@ class Wall {
 
     update() {
 
-        this.radius = this.startRadius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction;
+        // this.radius = this.startRadius + sin(this.frameCountOffset + frameCount*this.speed)*this.amplitude*this.direction;
     }
 
     collide(collider) {
@@ -45,25 +51,51 @@ class Wall {
 
         if (this.dead) return;
 
-        if (turn == 0 && !this.bad) return;
-        if (turn == 1 && this.bad) return;
+        if (turn == 0 && !this.lava) return;
+        if (turn == 1 && this.lava) return;
 
-        if (this.bad) {
+        wallCanvas.fill(palette.white);
+
+        if (this.lava) {
+            wallCanvas.strokeWeight(10);
 
             if (player.hasKey) {
-                wallCanvas.stroke(palette.dark);
+                wallCanvas.stroke(palette.black);
             } else {
-                wallCanvas.stroke(palette.bad);
+                wallCanvas.stroke(palette.lava);
             }
-            wallCanvas.strokeWeight(5);
         } else {
-            wallCanvas.noStroke();
+            wallCanvas.strokeWeight(1);
+
+            if (this.y < height/2 + 25 && this.y > height/2 - 25) {
+                // wallCanvas.strokeWeight(2);
+                wallCanvas.stroke(palette.dark);
+            } else if (this.y > height/2) {
+                wallCanvas.stroke(palette.light);
+            } else {
+                wallCanvas.stroke(palette.mid);
+            }
         }
 
-        let badLeeway = this.bad ? 2 : 0;
+        let lavaLeeway = -5;
 
-        wallCanvas.fill(palette.black);
-        wallCanvas.ellipse(this.x, this.y, this.radius + badLeeway);
+        let firstIteration = true;
+
+        for (let i = this.radius + lavaLeeway; i > 0; i-=10) {
+
+            wallCanvas.ellipse(this.x, this.y, i);
+
+            if (firstIteration) {
+                firstIteration = false;
+                wallCanvas.strokeWeight(1);
+            }
+        }
+
+        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway);
+        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing);
+        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*2);
+        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*3);
+        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*4);
     }
 
     kill() {

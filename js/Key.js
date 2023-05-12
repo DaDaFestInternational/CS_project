@@ -51,9 +51,15 @@ class Key {
         if (player.hasKey) return;
 
         ballCanvas.strokeWeight(2);
-        ballCanvas.stroke(palette.dark);
-        ballCanvas.fill(palette.light);
+        ballCanvas.stroke(palette.black);
+        ballCanvas.fill(palette.white);
         ballCanvas.ellipse(this.currentX, this.currentY, this.radius);
         ballCanvas.noStroke();
+
+        objectCanvas.strokeWeight(2);
+        objectCanvas.stroke(palette.black);
+        objectCanvas.fill(palette.white);
+        objectCanvas.ellipse(this.currentX, this.currentY, this.radius);
+        objectCanvas.noStroke();
     }
 }
