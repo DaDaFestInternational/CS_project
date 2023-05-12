@@ -60,13 +60,13 @@ class Door {
 
         ballCanvas.strokeWeight(4);
         ballCanvas.stroke(palette.black);
-        ballCanvas.fill(palette.light);
+        ballCanvas.fill(palette.gold);
         ballCanvas.ellipse(this.x, this.y, this.radius + this.dilate);
         ballCanvas.noStroke();
 
         objectCanvas.strokeWeight(4);
         objectCanvas.stroke(palette.black);
-        objectCanvas.fill(palette.light);
+        objectCanvas.fill(palette.gold);
         objectCanvas.ellipse(this.x, this.y, this.radius + this.dilate);
         objectCanvas.noStroke();
     }

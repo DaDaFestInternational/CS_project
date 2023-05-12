@@ -6,7 +6,8 @@ let palette = {
     mid: "#FD9A7E",
     dark: "#4379AE",
     black: "#173045",
-    lava: "#F34B1B"
+    lava: "#F34B1B",
+    gold: "#EDB421",
   }
 
 let keeb = [
@@ -55,12 +56,16 @@ let cumulative1 = 0;
 let cumulative2 = culminations;
 
 let brushFont;
+let blackKeyImagekeyImage;
+let blackKeyImage;
 
 let risingWater;
 
 function preload() {
 
     brushFont = loadFont("./fonts/CaveatBrush-Regular.ttf");
+    keyImage = loadImage("./images/key.png");
+    blackKeyImage = loadImage("./images/black-key.png");
 }
 
 function setup() {
@@ -172,7 +177,6 @@ function draw() {
 function buttonsPressed() {
 
     let strength = 0.27;
-    if (player.inWater) strength *= 0.1;
 
     if (keyIsDown(left) && keyIsDown(right)) {
         xAxisInput = 0;
@@ -398,11 +402,16 @@ function updateWalls() {
         walls[i].display(1);
     }
 
-    let radius = 45;
+    let radius = 55;
     wallCanvas.fill(palette.black);
     wallCanvas.noStroke();
     wallCanvas.ellipse(0, 0, radius);
     wallCanvas.ellipse(width, 0, radius);
     wallCanvas.ellipse(width, height, radius);
     wallCanvas.ellipse(0, height, radius);
+
+    wallCanvas.noFill();
+    wallCanvas.stroke(palette.black);
+    wallCanvas.strokeWeight(10);
+    wallCanvas.rect(0, 0, width, height);
 }

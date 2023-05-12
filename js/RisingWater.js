@@ -41,16 +41,16 @@ class RisingWater {
         player.inWater = false;
 
         if (this.direction == "up") {
-            if (player.y > this.y-height/2) player.inWater = true;
+            if (player.y > this.y-height/2+50) player.inWater = true;
             if (!player.hasKey) this.y -= 0.5;
         } else if (this.direction == "down") {
-            if (player.y < this.y+height/2) player.inWater = true;
+            if (player.y < this.y+height/2-50) player.inWater = true;
             if (!player.hasKey) this.y += 0.5;
         } else if (this.direction == "left") {
-            if (player.x < this.x+width/2) player.inWater = true;
+            if (player.x < this.x+width/2-50) player.inWater = true;
             if (!player.hasKey) this.x += 0.5;
         } else if (this.direction == "right") {
-            if (player.x > this.x-width/2) player.inWater = true;
+            if (player.x > this.x-width/2+50) player.inWater = true;
             if (!player.hasKey) this.x -= 0.5;
         }
     }

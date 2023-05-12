@@ -12,6 +12,8 @@ class Key {
 
         this.targetX = this.x + random(-20, 20);
         this.targetY = this.y + random(-20, 20);
+
+        this.lastFrame = false;
     }
 
     collide(collider) {
@@ -48,18 +50,32 @@ class Key {
 
     display() {
 
-        if (player.hasKey) return;
+        if (player.hasKey && this.lastFrame) {
+            return;
+        } else if (player.hasKey) {
+            this.lastFrame = true;
+            ballCanvas.imageMode(CENTER);
+            ballCanvas.image(blackKeyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
+            console.log('done')
+            return;
+        }
 
-        ballCanvas.strokeWeight(2);
-        ballCanvas.stroke(palette.black);
-        ballCanvas.fill(palette.white);
-        ballCanvas.ellipse(this.currentX, this.currentY, this.radius);
-        ballCanvas.noStroke();
+        // ballCanvas.strokeWeight(2);
+        // ballCanvas.stroke(palette.black);
+        // ballCanvas.fill(palette.white);
+        // ballCanvas.ellipse(this.currentX, this.currentY, this.radius);
+        // ballCanvas.noStroke();
 
-        objectCanvas.strokeWeight(2);
-        objectCanvas.stroke(palette.black);
-        objectCanvas.fill(palette.white);
-        objectCanvas.ellipse(this.currentX, this.currentY, this.radius);
-        objectCanvas.noStroke();
+        // objectCanvas.strokeWeight(2);
+        // objectCanvas.stroke(palette.black);
+        // objectCanvas.fill(palette.white);
+        // objectCanvas.ellipse(this.currentX, this.currentY, this.radius);
+        // objectCanvas.noStroke();
+
+        ballCanvas.imageMode(CENTER);
+        ballCanvas.image(keyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
+
+        objectCanvas.imageMode(CENTER);
+        objectCanvas.image(keyImage, this.currentX, this.currentY, this.radius*2, this.radius*2);
     }
 }
