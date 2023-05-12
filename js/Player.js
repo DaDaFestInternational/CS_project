@@ -21,6 +21,8 @@ class Player {
         this.safeY = this.y;
 
         this.hasKey = false;
+
+        this.inWater = false;
     }
 
     update() {

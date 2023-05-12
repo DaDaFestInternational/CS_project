@@ -35,7 +35,7 @@ class PathMaker {
         }
 
         if ((this.x < this.radius*3 && this.velocityX < 0) || (this.x > width-this.radius*3 && this.velocityX > 0)) this.velocityX *= -1;
-        if ((this.y < this.radius*3 && this.velocityY < 0) || (this.y > height-this.radius*3 && this.velocityY > 0)) this.velocityY *= -1;
+        if ((this.y < this.radius*3+50 && this.velocityY < 0) || (this.y > height-this.radius*3 && this.velocityY > 0)) this.velocityY *= -1;
 
         this.x += this.velocityX;
         this.y += this.velocityY;

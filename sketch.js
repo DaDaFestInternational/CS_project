@@ -15,6 +15,8 @@ let keeb = [
     [90, 88, 67, 86, 66, 78, 77]
 ];
 
+let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+
 let xAxisInput = 0;
 let yAxisInput = 0;
 
@@ -24,6 +26,7 @@ let walls = [];
 let pathMaker;
 let door;
 let key;
+let toxicWater = [];
 
 let minKeycode = 65;
 let maxKeycode = 90;
@@ -45,10 +48,20 @@ let scoreCount = 0;
 let wallCanvas;
 let ballCanvas;
 let objectCanvas;
+let waterCanvas;
 
 let culminations = 7;
 let cumulative1 = 0;
 let cumulative2 = culminations;
+
+let brushFont;
+
+let risingWater;
+
+function preload() {
+
+    brushFont = loadFont("./fonts/CaveatBrush-Regular.ttf");
+}
 
 function setup() {
 
@@ -68,6 +81,9 @@ function setup() {
     objectCanvas = createGraphics(maxWidth, maxHeight);
     objectCanvas.noStroke();
 
+    waterCanvas = createGraphics(maxWidth, maxHeight);
+    waterCanvas.noStroke();
+
     player = new Player();
 
     newMaze(true);
@@ -79,6 +95,16 @@ function draw() {
     ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
+
+    if (risingWater != 0) {
+        risingWater.update();
+        risingWater.display();
+    }
+
+    for (let i = 0; i < toxicWater.length; i++) {
+        toxicWater[i].update();
+        // toxicWater[i].display();
+    }
 
     door.update();
     door.display();
@@ -113,6 +139,7 @@ function draw() {
     }
 
     image(ballCanvas, 0, 0);
+    image(waterCanvas, 0, 0);
 
     strokeWeight(1);
     stroke(palette.black);
@@ -136,7 +163,6 @@ function draw() {
         spacing*=1.25;
     }
 
-
     image(objectCanvas, 0, 0);
     image(wallCanvas, 0, 0);
 
@@ -146,6 +172,7 @@ function draw() {
 function buttonsPressed() {
 
     let strength = 0.27;
+    if (player.inWater) strength *= 0.1;
 
     if (keyIsDown(left) && keyIsDown(right)) {
         xAxisInput = 0;
@@ -175,17 +202,31 @@ function buttonsPressed() {
 function displayUI() {
 
     push();
-    translate(width/2, 0);
 
     fill(palette.black)
     textAlign(CENTER, CENTER);
     noStroke();
+    textFont(brushFont);
 
-    textSize(20);
-    text("score = " + scoreCount, 0, 40);
+    textSize(25);
+    text(days[scoreCount%days.length], width - 50, 35);
 
-    translate(0, 120);
+    fill(palette.mid);
+    rect(width - 50, 80, 50, 50, 10);
 
+    fill(palette.white);
+    textSize(40);
+    text(scoreCount+1, width - 50, 73);
+
+    translate(width/2, 85);
+
+    fill(palette.white);
+    stroke(palette.mid);
+    strokeWeight(1);
+    rect(0, 0, 110, 110, 15);
+    rect(0, 0, 110-10, 110-10, 10);
+
+    noStroke();
     drawKey(up, 0, -30);
     drawKey(down, 0, 30);
     drawKey(left, -30, 0);
@@ -265,6 +306,11 @@ function newMaze(fresh, myDoor) {
 
     walls = [];
     collectables = [];
+    toxicWater = [];
+
+    // if (scoreCount > 15) risingWater = new RisingWater();
+    // else risingWater = 0;
+    risingWater = new RisingWater();
 
     let offset = 27;
 
@@ -276,6 +322,10 @@ function newMaze(fresh, myDoor) {
 
             walls.push(new Wall(x, y, 85));
         }
+    }
+
+    for (let i = 0; i < scoreCount/2; i++) {
+        toxicWater.push(new ToxicWater());
     }
 
     pathMaker = new PathMaker();
@@ -311,6 +361,8 @@ function newMaze(fresh, myDoor) {
     ballCanvas.clear();
 
     updateWalls();
+
+    for (let i = 0; i < 100; i++) ballCanvas.background(color(68, 140, 187, 10));
 }
 
 function keyPressed() {
@@ -332,7 +384,7 @@ function drawKey(letter, x, y) {
 
     textSize(25);
     if (keyIsDown(letter)) textSize(30);
-    text(char(letter), x, y);
+    text(char(letter), x, y-5);
 }
 
 function updateWalls() {
@@ -345,4 +397,12 @@ function updateWalls() {
     for (let i = 0; i < walls.length; i++) {
         walls[i].display(1);
     }
+
+    let radius = 45;
+    wallCanvas.fill(palette.black);
+    wallCanvas.noStroke();
+    wallCanvas.ellipse(0, 0, radius);
+    wallCanvas.ellipse(width, 0, radius);
+    wallCanvas.ellipse(width, height, radius);
+    wallCanvas.ellipse(0, height, radius);
 }

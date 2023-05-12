@@ -68,7 +68,6 @@ class Wall {
             wallCanvas.strokeWeight(1);
 
             if (this.y < height/2 + 25 && this.y > height/2 - 25) {
-                // wallCanvas.strokeWeight(2);
                 wallCanvas.stroke(palette.dark);
             } else if (this.y > height/2) {
                 wallCanvas.stroke(palette.light);
@@ -90,12 +89,6 @@ class Wall {
                 wallCanvas.strokeWeight(1);
             }
         }
-
-        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway);
-        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing);
-        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*2);
-        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*3);
-        // wallCanvas.ellipse(this.x, this.y, this.radius + lavaLeeway - spacing*4);
     }
 
     kill() {
