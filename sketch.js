@@ -94,7 +94,7 @@ function setup() {
 
     player = new Player();
 
-    giveUpButton = new Button("Give up", width-180, 70);
+    giveUpButton = new Button("Try again\ntomorrow", width-150, 70);
 
     // for (let i = 0; i < 50; i++) {
     //     snow.push(new Snow());
@@ -359,7 +359,7 @@ function newMaze(fresh, myDoor) {
         }
     }
 
-    for (let i = 0; i < dayCount/2; i++) {
+    for (let i = 0; i < (dayCount%13)/2; i++) {
         toxicWater.push(new ToxicWater());
     }
 

@@ -54,11 +54,11 @@ class Player {
         let moveY = true;
 
         if (this.inWater) {
-            this.velocityX += xAxisInput*0.1;
-            this.velocityY += yAxisInput*0.1;
+            this.velocityX += xAxisInput*0.2;
+            this.velocityY += yAxisInput*0.2;
         } else {
-            this.velocityX += xAxisInput*1.5;
-            this.velocityY += yAxisInput*1.5;
+            this.velocityX += xAxisInput*1.3;
+            this.velocityY += yAxisInput*1.3;
         }
 
         if (this.x+this.velocityX < this.radius/2 || this.x+this.velocityX > width-this.radius/2) moveX = false;

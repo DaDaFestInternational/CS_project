@@ -58,11 +58,11 @@ class Door {
 
         if (!player.hasKey) return;
 
-        ballCanvas.strokeWeight(4);
-        ballCanvas.stroke(palette.black);
-        ballCanvas.fill(palette.gold);
-        ballCanvas.ellipse(this.x, this.y, this.radius + this.dilate);
-        ballCanvas.noStroke();
+        // ballCanvas.strokeWeight(4);
+        // ballCanvas.stroke(palette.black);
+        // ballCanvas.fill(palette.gold);
+        // ballCanvas.ellipse(this.x, this.y, this.radius + this.dilate);
+        // ballCanvas.noStroke();
 
         objectCanvas.strokeWeight(4);
         objectCanvas.stroke(palette.black);

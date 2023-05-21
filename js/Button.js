@@ -5,8 +5,8 @@ class Button {
         this.label = label;
         this.x = x;
         this.y = y;
-        this.w = 180;
-        this.h = 50;
+        this.w = 120;
+        this.h = 80;
 
         this.hovered = false;
         this.lifeTime = 0;
@@ -56,8 +56,9 @@ class Button {
         fill(palette.black);
         if (this.hovered) fill(palette.white);
         textFont(brushFont);
-        textAlign(CENTER, CENTER);
-        textSize(30);
+        textAlign(CENTER);
+        textSize(25);
+        textLeading(25);
         text(this.label, 0, -6);
 
         pop();
