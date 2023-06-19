@@ -38,8 +38,6 @@ class RisingWater {
 
         if (this.x == width/2 && this.y == height/2) return;
 
-        player.inWater = false;
-
         if (this.direction == "up") {
             if (player.y > this.y-height/2+50) player.inWater = true;
             if (!player.hasKey) this.y -= 0.5;

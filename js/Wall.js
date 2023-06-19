@@ -21,10 +21,12 @@ class Wall {
         this.dead = false;
         this.lava = false;
 
-        let score = dayCount-9 > 30 ? 30 : dayCount-9;
+        let score = lavaCount > 30 ? 30 : lavaCount;
 
-        if (size < 500 && random() < 0.02 * score) {
-            this.lava = true;
+        if (act == 1 || act == 3) {
+            if (size < 500 && random() < 0.02 * score) {
+                this.lava = true;
+            }
         }
 
         this.frameCountOffset = int(random(100));

@@ -67,6 +67,8 @@ let giveUpButton;
 let interacted = false;
 let startTime;
 let act = 0;
+let lavaCount = 5;
+let toxicCount = 2;
 
 function preload() {
 
@@ -113,14 +115,16 @@ function draw() {
 
     let timeElapsed = int((new Date().getTime() - startTime)/1000);
 
-    if (timeElapsed > 60*5 && act < 1) {
+    if (timeElapsed > 60*2 && act < 1) {
         act = 1;
         console.log("act 1");
-    } if (timeElapsed > 60*10 && act < 2) {
+    } if (timeElapsed > 60*4 && act < 2) {
         act = 2;
         console.log("act 2");
-    } if (timeElapsed > 60*15 && act < 3) {
+    } if (timeElapsed > 60*6 && act < 3) {
         act = 3;
+        lavaCount = 5;
+        toxicCount = 2;
         console.log("act 3");
     }
 
@@ -130,6 +134,8 @@ function draw() {
     buttonsPressed();
     giveUpButton.update();
 
+    player.inWater = false;
+
     if (risingWater != 0) {
         risingWater.update();
         risingWater.display();
@@ -137,7 +143,7 @@ function draw() {
 
     for (let i = 0; i < toxicWater.length; i++) {
         toxicWater[i].update();
-        // toxicWater[i].display();
+        // toxicWater[i].display(100);
     }
 
     door.update();
@@ -152,6 +158,7 @@ function draw() {
     if (!player.hasKey && key.collide(player)) {
         player.hasKey = true;
         updateWalls();
+        waterCanvas.clear();
     }
 
     if (player.hasKey && door.enter(player)) {
@@ -161,6 +168,8 @@ function draw() {
             while(!foundPath) foundPath = pathInput();
         }
         dayCount++;
+        if (act == 1 || act == 3) lavaCount++;
+        if (act == 2 || act == 3) toxicCount++;
 
         if (cumulative1 < cumulative2) {
             cumulative1+=3;
@@ -364,7 +373,8 @@ function newMaze(fresh, myDoor) {
     collectables = [];
     toxicWater = [];
 
-    risingWater = new RisingWater();
+    risingWater = 0;
+    if (act == 3) risingWater = new RisingWater();
 
     let offset = 27;
 
@@ -378,8 +388,12 @@ function newMaze(fresh, myDoor) {
         }
     }
 
-    for (let i = 0; i < (dayCount%13)/2; i++) {
-        toxicWater.push(new ToxicWater());
+    waterCanvas.clear();
+
+    if (act == 2 || act == 3) {
+        for (let i = 0; i < toxicCount/2; i++) {
+            toxicWater.push(new ToxicWater());
+        }
     }
 
     giveUpButton.lifeTime = 0;

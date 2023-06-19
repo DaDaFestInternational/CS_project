@@ -25,6 +25,8 @@ class Button {
 
         if (this.hovered && mouseIsPressed) {
             dayCount++;
+            if (act == 1 || act == 3) lavaCount++;
+            if (act == 2 || act == 3) toxicCount++;
             newMaze(false, door);
             let foundPath = pathInput();
             while(!foundPath) foundPath = pathInput();
