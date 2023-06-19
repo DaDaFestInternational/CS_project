@@ -50,6 +50,10 @@ class Player {
 
         if (this.visualRadius < this.radius) this.visualRadius += 2;
 
+        if (!interacted && (xAxisInput != 0) || yAxisInput != 0) {
+            interacted = true;
+        }
+
         let moveX = true;
         let moveY = true;
 

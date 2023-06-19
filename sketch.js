@@ -64,6 +64,10 @@ let risingWater;
 
 let giveUpButton;
 
+let interacted = false;
+let startTime;
+let act = 0;
+
 function preload() {
 
     brushFont = loadFont("./fonts/CaveatBrush-Regular.ttf");
@@ -101,9 +105,24 @@ function setup() {
     // }
 
     newMaze(true);
+
+    startTime = new Date().getTime();
 }
 
 function draw() {
+
+    let timeElapsed = int((new Date().getTime() - startTime)/1000);
+
+    if (timeElapsed > 60*5 && act < 1) {
+        act = 1;
+        console.log("act 1");
+    } if (timeElapsed > 60*10 && act < 2) {
+        act = 2;
+        console.log("act 2");
+    } if (timeElapsed > 60*15 && act < 3) {
+        act = 3;
+        console.log("act 3");
+    }
 
     objectCanvas.clear();
     ballCanvas.background(color(68, 140, 187, 10)); // dark
