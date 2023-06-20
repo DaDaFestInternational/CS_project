@@ -30,26 +30,21 @@ class RisingWater {
             return;
         }
 
-        // if (player.hasKey) {
-        //     player.inWater = false;
-        //     waterCanvas.clear();
-        //     return;
-        // }
-
-        if (this.x == width/2 && this.y == height/2) return;
+        let velocity = 0.5;
+        if (this.x == width/2 && this.y == height/2) velocity = 0;
 
         if (this.direction == "up") {
             if (player.y > this.y-height/2+50) player.inWater = true;
-            if (!player.hasKey) this.y -= 0.5;
+            if (!player.hasKey) this.y -= velocity;
         } else if (this.direction == "down") {
             if (player.y < this.y+height/2-50) player.inWater = true;
-            if (!player.hasKey) this.y += 0.5;
+            if (!player.hasKey) this.y += velocity;
         } else if (this.direction == "left") {
             if (player.x < this.x+width/2-50) player.inWater = true;
-            if (!player.hasKey) this.x += 0.5;
+            if (!player.hasKey) this.x += velocity;
         } else if (this.direction == "right") {
             if (player.x > this.x-width/2+50) player.inWater = true;
-            if (!player.hasKey) this.x -= 0.5;
+            if (!player.hasKey) this.x -= velocity;
         }
     }
 
