@@ -269,12 +269,7 @@ function buttonsPressed() {
     }
 }
 
-function narrationStart() {
 
-    if(keyIsDown(left) || keyIsDown(right) || keyIsDown(up) || keyIsDown(down)){
-        chrisAudio.play();
-    }
-}
 
 function displayUI() {
 
