@@ -139,7 +139,7 @@ function draw() {
 
     buttonsPressed();
     narrationStart();
-    displayCaption();
+    //displayCaption();
     giveUpButton.update();
 
     player.inWater = false;
@@ -282,13 +282,13 @@ function narrationStart() {
     }
 }
 
-function displayCaption() {
+//function displayCaption() {
+//
+//    if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
+        //dayCount = 99;
+//    }
 
-    if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
-        dayCount = 99;
-    }
-
-}
+//}
 
 function displayUI() {
 
