@@ -70,10 +70,6 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
-var chrisAudio = new Audio("./audio/chris.mp3");
-var keyAudio = new Audio('./audio/key.mp3');
-var doorAudio = new Audio('./audio/door.mp3');
-
 function preload() {
 
     brushFont = loadFont("./fonts/CaveatBrush-Regular.ttf");
@@ -136,8 +132,6 @@ function draw() {
     ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
-    narrationStart();
-    //displayCaption();
     giveUpButton.update();
 
     player.inWater = false;
@@ -161,18 +155,13 @@ function draw() {
     player.update();
     player.display();
 
-    caption.update();
-    caption.display();
-
     if (!player.hasKey && key.collide(player)) {
         player.hasKey = true;
         updateWalls();
         waterCanvas.clear();
-        keyAudio.play();
     }
 
     if (player.hasKey && door.enter(player)) {
-        doorAudio.play();
         newMaze(false, door);
         if(dayCount % 3 == 2) {
             let foundPath = pathInput();
@@ -272,21 +261,6 @@ function buttonsPressed() {
         yAxisInput = 0;
     }
 }
-
-function narrationStart() {
-
-    if(keyIsDown(left) || keyIsDown(right) || keyIsDown(up) || keyIsDown(down)){
-        chrisAudio.play();
-    }
-}
-
-//function displayCaption() {
-//
-//    if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
-        //dayCount = 99;
-//    }
-
-//}
 
 function displayUI() {
 
