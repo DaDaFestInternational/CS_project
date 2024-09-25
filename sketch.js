@@ -273,6 +273,10 @@ function narrationStart() {
 
     if(keyIsDown(left) || keyIsDown(right) || keyIsDown(up) || keyIsDown(down)){
         chrisAudio.play();
+
+        if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
+            dayCount = 99;
+        }
     }
 }
 
