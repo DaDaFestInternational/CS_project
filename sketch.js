@@ -70,8 +70,6 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
-let caption;
-
 var chrisAudio = new Audio("./audio/chris.mp3");
 var keyAudio = new Audio('./audio/key.mp3');
 var doorAudio = new Audio('./audio/door.mp3');
