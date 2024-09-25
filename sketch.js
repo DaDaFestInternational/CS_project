@@ -70,6 +70,8 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
+let caption;
+
 var chrisAudio = new Audio("./audio/chris.mp3");
 var keyAudio = new Audio('./audio/key.mp3');
 var doorAudio = new Audio('./audio/door.mp3');
@@ -137,6 +139,7 @@ function draw() {
 
     buttonsPressed();
     narrationStart();
+    displayCaption();
     giveUpButton.update();
 
     player.inWater = false;
@@ -159,6 +162,9 @@ function draw() {
 
     player.update();
     player.display();
+
+    caption.update();
+    caption.display();
 
     if (!player.hasKey && key.collide(player)) {
         player.hasKey = true;
@@ -274,6 +280,14 @@ function narrationStart() {
     if(keyIsDown(left) || keyIsDown(right) || keyIsDown(up) || keyIsDown(down)){
         chrisAudio.play();
     }
+}
+
+function displayCaption() {
+
+    if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
+        dayCount = 99;
+    }
+
 }
 
 function displayUI() {
