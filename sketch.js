@@ -303,7 +303,7 @@ function displayUI() {
 
     fill(palette.white);
     textSize(25);
-    text(captionText);
+    text("captionText");
 
     translate(width/2, 85);
 
