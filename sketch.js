@@ -292,8 +292,8 @@ function displayUI() {
     textFont(brushFont);
 
     textSize(25);
-    text(days[dayCount%days.length], width - 50, 35);
-    text("captionText");
+    //text(days[dayCount%days.length], width - 50, 35);
+    text(captionText, width - 50, 35);
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
