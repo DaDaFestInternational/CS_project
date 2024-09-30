@@ -293,6 +293,7 @@ function displayUI() {
 
     textSize(25);
     text(days[dayCount%days.length], width - 50, 35);
+    text("captionText");
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
@@ -300,10 +301,6 @@ function displayUI() {
     fill(palette.white);
     textSize(40);
     text(dayCount+1, width - 50, 73);
-
-    fill(palette.white);
-    textSize(25);
-    text("captionText");
 
     translate(width/2, 85);
 
