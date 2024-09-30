@@ -70,7 +70,7 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
-let captionText = "TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST";
+let captionText = "TEST";
 
 var chrisAudio = new Audio("./audio/chris.mp3");
 var keyAudio = new Audio('./audio/key.mp3');
