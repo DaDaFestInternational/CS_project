@@ -294,7 +294,7 @@ function displayUI() {
     textSize(25);
     text(days[dayCount%days.length], width - 50, 35);
 
-    text(captionText, width - 900, 650);
+    text(captionText, width - 640, 650);
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
