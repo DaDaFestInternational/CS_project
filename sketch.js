@@ -70,7 +70,7 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
-let captionText = "TEST";
+let captionText = "TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST";
 
 var chrisAudio = new Audio("./audio/chris.mp3");
 var keyAudio = new Audio('./audio/key.mp3');
@@ -293,7 +293,7 @@ function displayUI() {
 
     textSize(25);
     //text(days[dayCount%days.length], width - 50, 35);
-    text(captionText, width - 200, 100);
+    text(captionText, width - 50, 600);
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
