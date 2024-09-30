@@ -292,8 +292,7 @@ function displayUI() {
     textFont(brushFont);
 
     textSize(25);
-    //text(days[dayCount%days.length], width - 50, 35);
-    text(captionText, width - 900, 650);
+    text(days[dayCount%days.length], width - 50, 35);
 
     fill(palette.mid);
     rect(width - 50, 80, 50, 50, 10);
@@ -321,6 +320,9 @@ function displayUI() {
     fill(palette.black);
     rectMode(CENTER);
     rect(0, 0, 15);
+
+    textSize(25);
+    text(captionText, width - 900, 650);
 
     pop();
 
