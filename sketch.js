@@ -277,7 +277,7 @@ function narrationStart() {
         chrisAudio.play();
 
         if(chrisAudio.currentTime > 3 && chrisAudio.currentTime < 7){
-            dayCount = 99;
+            captionText = 99;
         }
     }
 }
