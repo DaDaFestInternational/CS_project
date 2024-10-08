@@ -166,10 +166,12 @@ function draw() {
         player.hasKey = true;
         updateWalls();
         waterCanvas.clear();
+        keyAudio.volume = 0.5;
         keyAudio.play();
     }
 
     if (player.hasKey && door.enter(player)) {
+        doorAudio.volume = 0.5;
         doorAudio.play();
         newMaze(false, door);
         if(dayCount % 3 == 2) {
