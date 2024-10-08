@@ -281,11 +281,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 12 && chrisAudio.currentTime < 23){
-            captionText = "years before that I have had chronic pain as well. I'm Japanese and I'm Ukrainian, I";
+            captionText = "years before that I have had chronic pain as well. I'm Japanese and I'm Ukrainian,";
         }
 
         if(chrisAudio.currentTime > 23 && chrisAudio.currentTime < 30){
-            captionText = "walk with a stick because of the chronic pain. This project's about the sort of disabled";
+            captionText = "I walk with a stick because of the chronic pain. This project's about the sort of disabled";
         }
 
         if(chrisAudio.currentTime > 30 && chrisAudio.currentTime < 40){
@@ -321,11 +321,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 84 && chrisAudio.currentTime < 96){
-            captionText = "more difficult and empathise with that as a broader and more constant experience. So";
+            captionText = "more difficult and empathise with that as a broader and more constant experience.";
         }
 
         if(chrisAudio.currentTime > 96 && chrisAudio.currentTime < 102){
-            captionText = "I think what made me want to do a project sort of like this was the fact that it seems";
+            captionText = " So I think what made me want to do a project sort of like this was the fact that it seems";
         }
 
         if(chrisAudio.currentTime > 102 && chrisAudio.currentTime < 111){
@@ -337,11 +337,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 119 && chrisAudio.currentTime < 126){
-            captionText = "disability into a sort of traditional western three-part narrative format which like most";
+            captionText = "disability into a sort of traditional western three-part narrative format which, like most";
         }
 
         if(chrisAudio.currentTime > 126 && chrisAudio.currentTime < 133){
-            captionText = "lives it just doesn't work in and unless you're taking the smallest segment of a specific";
+            captionText = "lives, it just doesn't work in and unless you're taking the smallest segment of a specific";
         }
 
         if(chrisAudio.currentTime > 133 && chrisAudio.currentTime < 139){
@@ -365,11 +365,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 167 && chrisAudio.currentTime < 174){
-            captionText = "that's true I think it's kind of the opposite where you need to create some hopeful art";
+            captionText = "that's true I think it's kind of the opposite where you need to create sort of hopeful art";
         }
 
         if(chrisAudio.currentTime > 174 && chrisAudio.currentTime < 184){
-            captionText = "and there's a genre in sort of Japanese art I guess that's called yashika which is it";
+            captionText = "and there's a genre in sort of Japanese art, I guess, that's called iyashikei which is it";
         }
 
         if(chrisAudio.currentTime > 184 && chrisAudio.currentTime < 190){
@@ -377,11 +377,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 190 && chrisAudio.currentTime < 200){
-            captionText = "really applied to a lot of like Ghibli films where like what's it called which is Kiki's";
+            captionText = "really applied to a lot of like Ghibli films where like, what's it called, Majo no Takkyubin, which is";
         }
 
         if(chrisAudio.currentTime > 200 && chrisAudio.currentTime < 205){
-            captionText = "Delivery Service where kind of nothing really happens it's like a sort of big kind of exciting";
+            captionText = "Kiki's Delivery Service where kind of nothing really happens it's like a sort of big kind of exciting";
         }
 
         if(chrisAudio.currentTime > 205 && chrisAudio.currentTime < 213){
@@ -389,15 +389,15 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 213 && chrisAudio.currentTime < 218){
-            captionText = "that kind of film has more of an effect on people like Ghibli is so popular worldwide";
+            captionText = "that kind of film has more of an effect on people, like Ghibli is so popular worldwide";
         }
 
         if(chrisAudio.currentTime > 218 && chrisAudio.currentTime < 222){
-            captionText = "for that reason that it's like such a rare genre to just like watch something that's";
+            captionText = "for that reason that it's like such a rare genre to just like watch something that's nice";
         }
 
         if(chrisAudio.currentTime > 222 && chrisAudio.currentTime < 228){
-            captionText = "nice like Grave of the Fireflies is one of their sort of bleaker very harsher films but";
+            captionText = "like Grave of the Fireflies is one of their sort of bleaker very harsher films but";
         }
 
         if(chrisAudio.currentTime > 228 && chrisAudio.currentTime < 238){
@@ -405,7 +405,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 238 && chrisAudio.currentTime < 244){
-            captionText = " oet sort of about their practice and she kept on talking about how like how difficult";
+            captionText = "poet sort of about their practice and she kept on talking about how like how difficult";
         }
 
         if(chrisAudio.currentTime > 244 && chrisAudio.currentTime < 252){
@@ -413,15 +413,15 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 252 && chrisAudio.currentTime < 257){
-            captionText = "a more happy place and she's like I've literally never thought of that before I guess it's";
+            captionText = "a more happy place and she's like 'I've literally never thought of that before I guess it's";
         }
 
         if(chrisAudio.currentTime > 257 && chrisAudio.currentTime < 262){
-            captionText = "probably harder because I've never done it and I think that is one of those things that";
+            captionText = "probably harder because I've never done it' and I think that is one of those things that";
         }
 
         if(chrisAudio.currentTime > 262 && chrisAudio.currentTime < 268){
-            captionText = "stayed with me that like oh yeah people like being sort of happy in a bleak time is much";
+            captionText = "stayed with me that like, oh yeah people like being sort of happy in a bleak time is much";
         }
 
         if(chrisAudio.currentTime > 268 && chrisAudio.currentTime < 273){
@@ -445,19 +445,19 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 302 && chrisAudio.currentTime < 311){
-            captionText = "EMI especially when sort of memory and stuff is getting quite shaken and affected because";
+            captionText = "ME especially when sort of memory and stuff is getting quite shaken and affected because";
         }
 
         if(chrisAudio.currentTime > 311 && chrisAudio.currentTime < 319){
-            captionText = "like my past feels so distant to me like even I think there's a sort of removal of one degree";
+            captionText = "like my past feels so distant to me, like even I think there's a sort of removal of one degree";
         }
 
         if(chrisAudio.currentTime > 319 && chrisAudio.currentTime < 323){
-            captionText = "to when I didn't have EMI but I still had the stick and I think that's the easiest for";
+            captionText = "to when I didn't have ME but I still had the stick and I think that's the easiest for";
         }
 
         if(chrisAudio.currentTime > 323 && chrisAudio.currentTime < 329){
-            captionText = "me to remember and then there's an even bigger removal from before that which feels so distant";
+            captionText = "me to remember and then there's an even bigger removal from before that, which feels so distant";
         }
 
         if(chrisAudio.currentTime > 329 && chrisAudio.currentTime < 336){
@@ -465,7 +465,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 336 && chrisAudio.currentTime < 343){
-            captionText = "it feels so unreal and disconnected almost and part of that is to do with like I guess";
+            captionText = "it feels so unreal and disconnected almost and part of that is to do with like, I guess";
         }
 
         if(chrisAudio.currentTime > 343 && chrisAudio.currentTime < 349){
@@ -473,19 +473,19 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 349 && chrisAudio.currentTime < 359){
-            captionText = "so like unrelated almost and then yeah it's also true the future where like EMI is quite";
+            captionText = "so like unrelated almost and then yeah it's also true the future where, like ME is quite";
         }
 
         if(chrisAudio.currentTime > 359 && chrisAudio.currentTime < 368){
-            captionText = "a strange disease not a lot is known about it sort of research is being done now especially";
+            captionText = "a strange disease, not a lot is known about it, sort of research is being done now especially";
         }
 
         if(chrisAudio.currentTime > 368 && chrisAudio.currentTime < 377){
-            captionText = "with like low COVID having quite a lot of similarities to it but yeah I think there's";
+            captionText = "with like Long COVID having quite a lot of similarities to it but yeah I think there's";
         }
 
         if(chrisAudio.currentTime > 377 && chrisAudio.currentTime < 384){
-            captionText = "a sense of I think I struggle with looking at the future like even sort of planning a";
+            captionText = "a sense of, I think I struggle with looking at the future like even sort of planning a";
         }
 
         if(chrisAudio.currentTime > 384 && chrisAudio.currentTime < 395){
@@ -493,23 +493,23 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 395 && chrisAudio.currentTime < 400){
-            captionText = "I don't know I think because I live in the day to day quite a lot more than most people";
+            captionText = "I don't know, I think because I live in the day to day quite a lot more than most people";
         }
 
         if(chrisAudio.currentTime > 400 && chrisAudio.currentTime < 406){
-            captionText = "do because there's more for me to think about in the day to day and then that sort of I";
+            captionText = "do because there's more for me to think about in the day to day and then that sort of";
         }
 
         if(chrisAudio.currentTime > 406 && chrisAudio.currentTime < 412){
-            captionText = "think contrasted with the fact that my day to days aren't that different and they do";
+            captionText = "I think contrasted with the fact that my day to days aren't that different and they do";
         }
 
         if(chrisAudio.currentTime > 412 && chrisAudio.currentTime < 421){
-            captionText = "blend into one so I guess time perception becomes strange but yeah because I'm sort";
+            captionText = "blend into one so I guess time perception becomes strange, but yeah because I'm sort of";
         }
 
         if(chrisAudio.currentTime > 421 && chrisAudio.currentTime < 426){
-            captionText = "of almost like lizard brain sort of just like paying attention to my body and how I am in";
+            captionText = "almost like lizard brain sort of just like paying attention to my body and how I am in";
         }
 
         if(chrisAudio.currentTime > 426 && chrisAudio.currentTime < 433){
@@ -517,7 +517,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 433 && chrisAudio.currentTime < 440){
-            captionText = "also think back. Yeah so I think in terms of diagnosis for EMI it's kind of all about";
+            captionText = "also think back. Yeah so I think in terms of diagnosis for ME it's kind of all about";
         }
 
         if(chrisAudio.currentTime > 440 && chrisAudio.currentTime < 450){
@@ -525,15 +525,15 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 450 && chrisAudio.currentTime < 454){
-            captionText = "sort of weird for me to say but luckily for me I had chronic pain before that so I was";
+            captionText = "sort of weird for me to say but luckily for me I had chronic pain before that, so I was";
         }
 
         if(chrisAudio.currentTime > 454 && chrisAudio.currentTime < 459){
-            captionText = "kind of used to going into the GP and sort of being like this is what's happening this";
+            captionText = "kind of used to going into the GP and sort of being like 'This is what's happening this";
         }
 
         if(chrisAudio.currentTime > 459 && chrisAudio.currentTime < 466){
-            captionText = "is probably what I need and because GPs like it's not they're not built for like anything";
+            captionText = "is probably what I need' and because GPs like it's not they're not built for like anything";
         }
 
         if(chrisAudio.currentTime > 466 && chrisAudio.currentTime < 473){
@@ -549,11 +549,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 486 && chrisAudio.currentTime < 491){
-            captionText = "and also I had the sort of bad luck that sort of during COVID all my medical records got";
+            captionText = "and also I had the sort of bad luck that sort of during COVID all my medical records";
         }
 
         if(chrisAudio.currentTime > 491 && chrisAudio.currentTime < 498){
-            captionText = "lost so I mean it kind of worked out both positively and negatively because then it";
+            captionText = "got lost so I mean it kind of worked out both positively and negatively because then it";
         }
 
         if(chrisAudio.currentTime > 498 && chrisAudio.currentTime < 508){
@@ -565,27 +565,27 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 516 && chrisAudio.currentTime < 523){
-            captionText = "at this point but because I sort of knew what procedures had been done to me and I'd been";
+            captionText = "at this point but, because I sort of knew what procedures had been done to me and I'd been";
         }
 
         if(chrisAudio.currentTime > 523 && chrisAudio.currentTime < 532){
-            captionText = "used to sort of fighting essentially sort of NHS on what I need and stuff it helped";
+            captionText = "used to sort of fighting essentially the sort of NHS on what I need and stuff it helped a lot";
         }
 
         if(chrisAudio.currentTime > 532 && chrisAudio.currentTime < 540){
-            captionText = "a lot and I think now luckily as my sort of brain has sort of deteriorated a lot more";
+            captionText = "and I think now luckily as my sort of brain has sort of deteriorated a lot more";
         }
 
         if(chrisAudio.currentTime > 540 && chrisAudio.currentTime < 543){
-            captionText = "my partner has sort of taken a lot of that role and like I said because we were sort";
+            captionText = "my partner has sort of taken a lot of that role and like I said because we were sort of";
         }
 
         if(chrisAudio.currentTime > 543 && chrisAudio.currentTime < 555){
-            captionText = "of we've been sort of together during my time with ME entire time with ME I think that's";
+            captionText = "we've been sort of together during my time with ME, entire time with ME, I think that's";
         }
 
         if(chrisAudio.currentTime > 555 && chrisAudio.currentTime < 558){
-            captionText = "been really helpful in terms of sort of and I've been really lucky with that actually";
+            captionText = "been really helpful in terms of sort of, and I've been really lucky with that actually";
         }
 
         if(chrisAudio.currentTime > 558 && chrisAudio.currentTime < 567){
@@ -617,11 +617,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 601 && chrisAudio.currentTime < 606){
-            captionText = "I won't get it back like holding you know there's that classic like holding water in";
+            captionText = "I won't get it back like holding you know there's that classic like holding water";
         }
 
         if(chrisAudio.currentTime > 606 && chrisAudio.currentTime < 610){
-            captionText = "your hands where if you hold it too tightly you're just gonna yeah I'll lose my train";
+            captionText = "in your hands where if you hold it too tightly you're just gonna yeah I'll lose my train";
         }
 
         if(chrisAudio.currentTime > 610 && chrisAudio.currentTime < 616){
@@ -629,11 +629,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 616 && chrisAudio.currentTime < 624){
-            captionText = "of like oh what was I doing but like truly not having any way to remember that speaking";
+            captionText = "of like, oh what was I doing, but like truly not having any way to remember that speaking";
         }
 
         if(chrisAudio.currentTime > 624 && chrisAudio.currentTime < 633){
-            captionText = "of which yeah I've forgotten what I was saying but yeah self-diagnosis is I think such an";
+            captionText = "of which, yeah I've forgotten what I was saying but yeah self-diagnosis is I think such an";
         }
 
         if(chrisAudio.currentTime > 633 && chrisAudio.currentTime < 638){
@@ -641,15 +641,15 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 638 && chrisAudio.currentTime < 646){
-            captionText = "having sort of realized I had ME and then dealing with that for two years until I eventually";
+            captionText = "having sort of realised I had ME and then dealing with that for two years until I eventually";
         }
 
         if(chrisAudio.currentTime > 646 && chrisAudio.currentTime < 651){
-            captionText = "annoyingly easily got to a clinic where they were like oh yeah we're just gonna diagnose";
+            captionText = "annoyingly easily, got to a clinic where they were like 'Hh yeah we're just gonna diagnose";
         }
 
         if(chrisAudio.currentTime > 651 && chrisAudio.currentTime < 654){
-            captionText = "you then you clearly have ME and I was like yeah I thought they'd been saying that for";
+            captionText = "you then you clearly have ME' and I was like yeah I thought they'd been saying that for";
         }
 
         if(chrisAudio.currentTime > 654 && chrisAudio.currentTime < 659){
@@ -661,11 +661,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 666 && chrisAudio.currentTime < 670){
-            captionText = "by the time I got to the specialist clinic ME was affecting me way more than chronic";
+            captionText = "by the time I got to the specialist clinic ME was affecting me way more than chronic pain";
         }
 
         if(chrisAudio.currentTime > 670 && chrisAudio.currentTime < 680){
-            captionText = "pain so I had to go to a different specialist clinic for ME and yeah but equally for me";
+            captionText = "so I had to go to a different specialist clinic for ME and yeah, but equally for me";
         }
 
         if(chrisAudio.currentTime > 680 && chrisAudio.currentTime < 687){
@@ -677,7 +677,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 692 && chrisAudio.currentTime < 701){
-            captionText = "the stick and stuff like very easy to get used to whereas the ME has been much harder";
+            captionText = "the stick and stuff like very easy to get used to, whereas the ME has been much harder";
         }
 
         if(chrisAudio.currentTime > 701 && chrisAudio.currentTime < 708){
@@ -709,7 +709,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 747 && chrisAudio.currentTime < 756){
-            captionText = "essentially when I first noticed when I guess I started to be affected by ME was essentially";
+            captionText = "essentially what I first noticed when I guess I started to be affected by ME was essentially";
         }
 
         if(chrisAudio.currentTime > 756 && chrisAudio.currentTime < 763){
@@ -717,39 +717,39 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 763 && chrisAudio.currentTime < 773){
-            captionText = " for quite a few years by that point and in fact it sort of it felt quite juxtaposed to";
+            captionText = " for quite a few years by that point and in fact it sort of it felt quite juxtaposed";
         }
 
         if(chrisAudio.currentTime > 773 && chrisAudio.currentTime < 779){
-            captionText = "that in the sense that sort of when I first started I have chronic pain and when I first";
+            captionText = "to that in the sense that sort of when I first started, I have chronic pain and when I first";
         }
 
         if(chrisAudio.currentTime > 779 && chrisAudio.currentTime < 785){
-            captionText = "started I got quite sick and then I happened to be going by a stick store basically on";
+            captionText = "started I got quite sick and then I happened to be going by a stick store basically";
         }
 
         if(chrisAudio.currentTime > 785 && chrisAudio.currentTime < 791){
-            captionText = "my way to work which someone was actually carrying me to because we're going for a meeting";
+            captionText = "on my way to work which someone was actually carrying me to because we're going for a meeting";
         }
 
         if(chrisAudio.currentTime > 791 && chrisAudio.currentTime < 795){
-            captionText = "based on like oh you've been sick a lot and something's happening but we happened to walk";
+            captionText = "based on like 'Oh you've been sick a lot and something's happening' but we happened to walk";
         }
 
         if(chrisAudio.currentTime > 795 && chrisAudio.currentTime < 804){
-            captionText = "by a stick store and I got one and yeah I could walk again but then there was a sort";
+            captionText = "by a stick store and I got one and yeah I could walk again but then there was a sort of";
         }
 
         if(chrisAudio.currentTime > 804 && chrisAudio.currentTime < 811){
-            captionText = "of slow recovery period where I started to get used to that and then about by a year";
+            captionText = "slow recovery period where I started to get used to that and then about by a year";
         }
 
         if(chrisAudio.currentTime > 811 && chrisAudio.currentTime < 820){
-            captionText = "later I was like very confidently moving around yeah and then this felt kind of the opposite";
+            captionText = "later I was like very confidently moving around yeah, and then this felt kind of the opposite";
         }
 
         if(chrisAudio.currentTime > 820 && chrisAudio.currentTime < 826){
-            captionText = "of that where I was like I was starting to get a bit more tired and being like oh I guess";
+            captionText = "of that where I was like I was starting to get a bit more tired and being like 'Oh I guess";
         }
 
         if(chrisAudio.currentTime > 826 && chrisAudio.currentTime < 830){
@@ -757,7 +757,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 830 && chrisAudio.currentTime < 838){
-            captionText = "heavily on it as sort of like a young person who's quite fit and healthy so it's like maybe";
+            captionText = "heavily on it as sort of like a young person who's quite fit and healthy' so I was like maybe";
         }
 
         if(chrisAudio.currentTime > 838 && chrisAudio.currentTime < 843){
@@ -765,7 +765,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 843 && chrisAudio.currentTime < 852){
-            captionText = "slowly being like oh maybe I should walk less and yeah and then it was like starting to";
+            captionText = "slowly being like 'Oh maybe I should walk less' and yeah and then it was like starting to";
         }
 
         if(chrisAudio.currentTime > 852 && chrisAudio.currentTime < 859){
@@ -777,7 +777,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 865 && chrisAudio.currentTime < 872){
-            captionText = "sort of like kind of like being hangry basically these sort of meltdowns where I just like";
+            captionText = "sort of like, kind of like being hangry basically these sort of meltdowns where I'd just like";
         }
 
         if(chrisAudio.currentTime > 872 && chrisAudio.currentTime < 882){
@@ -793,27 +793,27 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 892 && chrisAudio.currentTime < 898){
-            captionText = "so that's when I was like oh something's up yeah this is normal. Sort of tiredness is";
+            captionText = "so that's when I was like 'Oh something's up yeah this isn't normal.' Sort of tiredness is";
         }
 
         if(chrisAudio.currentTime > 898 && chrisAudio.currentTime < 903){
-            captionText = "I think tiredness is a very loose word for it I think fatigue is commonly used but I";
+            captionText = "I think tiredness is a very loose word for it I think fatigue is commonly used but";
         }
 
         if(chrisAudio.currentTime > 903 && chrisAudio.currentTime < 911){
-            captionText = "think fatigue is also sort of in modern parlance quite misused with things like allyship fatigue";
+            captionText = "I think fatigue is also sort of in modern parlance quite misused with things like allyship fatigue";
         }
 
         if(chrisAudio.currentTime > 911 && chrisAudio.currentTime < 922){
-            captionText = "and stuff which is kind of a non thing but yeah the tiredness is sort of unlike anything";
+            captionText = "and stuff which is kind of a non-thing but yeah the tiredness is sort of unlike anything";
         }
 
         if(chrisAudio.currentTime > 922 && chrisAudio.currentTime < 929){
-            captionText = "I'd experienced previously I think part of the contrast for me is I used to be a very";
+            captionText = "I'd experienced previously, I think part of the contrast for me is I used to be a very";
         }
 
         if(chrisAudio.currentTime > 929 && chrisAudio.currentTime < 935){
-            captionText = "energetic person I wasn't necessarily the fittest person in terms of exercise and stuff";
+            captionText = "energetic person. I wasn't necessarily the fittest person in terms of exercise and stuff";
         }
 
         if(chrisAudio.currentTime > 935 && chrisAudio.currentTime < 941){
@@ -821,7 +821,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 941 && chrisAudio.currentTime < 950){
-            captionText = "extremely exhausted and sort of I'd have no problems with that like I could easily stay";
+            captionText = "extremely exhausted and sort of I'd have no problems with that, like I could easily stay";
         }
 
         if(chrisAudio.currentTime > 950 && chrisAudio.currentTime < 958){
@@ -829,19 +829,19 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 958 && chrisAudio.currentTime < 972){
-            captionText = "I think the sort of fatigue is kind of on another level of how deeply it affects me";
+            captionText = "I think the sort of fatigue is kind of on another level of how deeply it affects me.";
         }
 
         if(chrisAudio.currentTime > 972 && chrisAudio.currentTime < 978){
-            captionText = "like even now like as I've been housebound for quite a while and mostly bed bound within";
+            captionText = "Like even now, like as I've been housebound for quite a while and mostly bed bound within";
         }
 
         if(chrisAudio.currentTime > 978 && chrisAudio.currentTime < 982){
-            captionText = "that and there's a huge difference to me when I can tell when I'm physically exhausted in";
+            captionText = "that and there's a huge difference to me when I can tell when I'm physically exhausted";
         }
 
         if(chrisAudio.currentTime > 982 && chrisAudio.currentTime < 990){
-            captionText = "a normal way or if it's more ME related because physically exhausted in a normal way it feels";
+            captionText = "in a normal way or if it's more ME related because physically exhausted in a normal way, it feels";
         }
 
         if(chrisAudio.currentTime > 990 && chrisAudio.currentTime < 995){
@@ -849,11 +849,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 995 && chrisAudio.currentTime < 1003){
-            captionText = "feel the sort of ME exhaustion come on because it sort of penetrates like deep there's like";
+            captionText = "feel the sort of ME exhaustion come on because it sort of penetrates like deep, there's like";
         }
 
         if(chrisAudio.currentTime > 1003 && chrisAudio.currentTime < 1013){
-            captionText = "the phrase bone tired feels like such a sort of light read of it like I remember sort of";
+            captionText = "the phrase 'Bone Tired' feels like such a sort of light read of it, like I remember sort of";
         }
 
         if(chrisAudio.currentTime > 1013 && chrisAudio.currentTime < 1018){
@@ -881,7 +881,7 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 1056 && chrisAudio.currentTime < 1065){
-            captionText = "sort of exactly the same so maybe that's also why it's sort of stands out to me I realize";
+            captionText = "sort of exactly the same so maybe that's also why it's sort of stands out to me. I realise";
         }
 
         if(chrisAudio.currentTime > 1065 && chrisAudio.currentTime < 1072){
@@ -889,11 +889,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 1072 && chrisAudio.currentTime < 1081){
-            captionText = "when I see friends I have this weird like sort of moment of like it almost feels like";
+            captionText = "when I see friends, I have this weird like sort of moment of like it almost feels like coming";
         }
 
         if(chrisAudio.currentTime > 1081 && chrisAudio.currentTime < 1088){
-            captionText = "coming like meeting people who are and you're both speaking your second language and there's";
+            captionText = "like meeting people who are, and you're both speaking your second language and there's";
         }
 
         if(chrisAudio.currentTime > 1088 && chrisAudio.currentTime < 1098){
@@ -901,11 +901,11 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 1098 && chrisAudio.currentTime < 1105){
-            captionText = "can't communicate to a certain extent about things I think part of that is a lot of sort";
+            captionText = "can't communicate to a certain extent about things I think part of that is a lot of sort of";
         }
 
         if(chrisAudio.currentTime > 1105 && chrisAudio.currentTime < 1115){
-            captionText = "of able-bodied people it's difficult to talk about disability with them because sort of";
+            captionText = "able-bodied people it's difficult to talk about disability with them because sort of";
         }
 
         if(chrisAudio.currentTime > 1115 && chrisAudio.currentTime < 1120){
@@ -913,15 +913,15 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 1120 && chrisAudio.currentTime < 1125){
-            captionText = "a huge part of that is sort of taught like often young people are told not to look at";
+            captionText = "a huge part of that is sort of taught, like often young people are told not to look at";
         }
 
         if(chrisAudio.currentTime > 1125 && chrisAudio.currentTime < 1130){
-            captionText = "disabled people and like don't stare it's rude and then they just like never look at";
+            captionText = "disabled people and like 'Don't stare, it's rude' and then they just like never look at";
         }
 
         if(chrisAudio.currentTime > 1130 && chrisAudio.currentTime < 1136){
-            captionText = "disabled people so then they've got this weird like sort of I should look away from you kind";
+            captionText = "disabled people so then they've got this weird like sort of 'I should look away from you' kind";
         }
 
         if(chrisAudio.currentTime > 1136 && chrisAudio.currentTime < 1144){
@@ -933,14 +933,14 @@ function narrationStart() {
         }
 
         if(chrisAudio.currentTime > 1152 && chrisAudio.currentTime < 1156){
-            captionText = "and I think in the arts that's not that's one of those things that people say they do";
+            captionText = "and I think in the arts that's not, that's one of those things that people say they do";
         }
 
-        if(chrisAudio.currentTime > 1156 && chrisAudio.currentTime < 1162){
+        if(chrisAudio.currentTime > 1156 && chrisAudio.currentTime < 1164){
             captionText = "but don't and struggle with.";
         }
 
-        if(chrisAudio.currentTime > 1162){
+        if(chrisAudio.currentTime > 1164){
             captionText = "";
         }
 
