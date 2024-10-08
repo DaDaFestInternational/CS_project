@@ -138,7 +138,7 @@ function draw() {
     ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
-    narrationStart();
+    //narrationStart();
     giveUpButton.update();
 
     player.inWater = false;
@@ -242,6 +242,7 @@ function draw() {
     rect(width/2, height/2, width, height);
 
     displayUI();
+    narrationStart();
 }
 
 function buttonsPressed() {
