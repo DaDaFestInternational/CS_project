@@ -70,7 +70,7 @@ let act = 0;
 let lavaCount = 5;
 let toxicCount = 2;
 
-let captionText = "TEST";
+let captionText = "";
 
 var chrisAudio = new Audio("./audio/chris.mp3");
 var keyAudio = new Audio('./audio/key.mp3');
@@ -138,7 +138,7 @@ function draw() {
     ballCanvas.background(color(68, 140, 187, 10)); // dark
 
     buttonsPressed();
-    //narrationStart();
+    narrationStart();
     giveUpButton.update();
 
     player.inWater = false;
@@ -242,7 +242,6 @@ function draw() {
     rect(width/2, height/2, width, height);
 
     displayUI();
-    narrationStart();
 }
 
 function buttonsPressed() {
@@ -278,7 +277,8 @@ function narrationStart() {
 
     if(keyIsDown(left) || keyIsDown(right) || keyIsDown(up) || keyIsDown(down)){
         chrisAudio.play();
-
+    }
+        
         if(chrisAudio.currentTime > 4 && chrisAudio.currentTime < 12){
             captionText = "My name is Chris, I'm 30, I've had ME for a number of years now and for a number of";
         }
@@ -947,8 +947,8 @@ function narrationStart() {
             captionText = "";
         }
 
-    }
 }
+
 
 function displayUI() {
 
